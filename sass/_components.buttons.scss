@@ -1,0 +1,25 @@
+/* -------------------------------------------
+          button module/component (BEM)
+---------------------------------------------*/
+
+.button {
+    color: white;
+    background-color: var(--header-color);
+    font: inherit; /* override font styles in user agent with our body styles */
+    font-weight: bold;
+    border: 1.5px solid var(--header-color);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+    color: var(--header-color);
+    background-color: white;
+
+}
+
+.button:focus {
+    outline: none;
+}

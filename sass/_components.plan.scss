@@ -1,0 +1,82 @@
+/* -------------------------------------------
+          plan module/component (BEM)
+---------------------------------------------*/
+
+.plan {
+    background: var(--plan-bg-color);
+    text-align: center;
+    padding: 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.plan__title {
+    color: var(--header-color);
+}
+
+.plan__price {
+    color: #858585;
+}
+
+/* multiple classes architecture => specificity higher */
+.plan--highlighted {
+    background: var(--plan-highlighted-bg-color);
+    color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* multiple classes architecture => specificity higher */
+.plan--highlighted .plan__title {
+    color: white;
+}
+
+/* multiple classes architecture => specificity higher */
+.plan--highlighted .plan__price {
+    color: var(--header-color);
+}
+
+/*
+The above is one of a few occasions where we’d use a descendant
+selector to modify an Element based on a Modifier on the Block.
+
+If using Sass, we would likely write this like so:
+
+.plan { }
+
+  .plan__title {
+
+    .plan--highlighted & { } // [2]
+
+  }
+
+.plan--highlighted { } // [1]
+
+Note that we do not nest a new instance of .plan__title {} inside
+of .plan--highlighted {} [1]. instead, we make use of Sass’ parent selectors
+to prepend .plan--highlighted onto the existing .plan__title {} selector [2].
+This means that all of our .plan__highlighted {}-related rules exist in
+one place, and aren’t spread throughout the file.
+
+This is general good practice when dealing with nested code: keep all of
+your context (e.g. all .plan__highlighted {} code) encapsulated in one location.
+*/
+
+.plan__annotation {
+    color: var(--plan-highlighted-bg-color);
+    background: white;
+    padding: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.plan__features {
+    list-style: none;
+    margin: 0;
+    reset: 0;
+}
+
+.plan__feature {
+    margin: 8px 0;
+}

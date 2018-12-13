@@ -1,0 +1,17 @@
+/* -------------------------------------------
+     CSS Variables (custom properties)
+---------------------------------------------*/
+
+/* Custom properties do inherit. This means that if no value is set
+   for a custom property on a given element, the value of its parent is used */
+:root {
+    /* navigation (main-header) */
+    --header-bg-color: #2ddf5c;
+    --header-color: #0e4f1f; /* logo and navigation text */
+    --main-title-color: #2ddf5c;
+    /* plan */
+    --plan-bg-color: #d5ffdc;
+    --plan-highlighted-bg-color: #19b84c;
+    /* colors */
+    --light-red: #ff1b68;
+}
