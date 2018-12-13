@@ -1,4 +1,20 @@
 /* -------------------------------------------
+          plans module/component (BEM)
+---------------------------------------------*/
+
+.plans__title {
+    color: var(--main-title-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+.plans__list {
+    width: 80%;
+    margin: 0 auto;     // centrer selve .plans__list elementet
+    text-align: center; // centrer .plan elementerne (de er inline-block)
+}
+
+/* -------------------------------------------
           plan module/component (BEM)
 ---------------------------------------------*/
 
