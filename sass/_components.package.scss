@@ -1,0 +1,68 @@
+.packages {
+    margin: 0;
+    padding: 0;
+    @include clearfix;
+}
+
+.package {
+
+    border: 4px solid var(--header-color);
+    border-left: none;
+    margin: 16px 0;
+    width: 80%;
+
+    // because the link is the entire box
+    &:hover,
+    &:active {
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // x-offset y-offset blur-radius color
+        border-color: #ff5454;
+    }
+
+    & > a {
+        text-decoration: none;
+        display: block; // make the entire box a link
+        padding: 32px;
+        color: inherit; // no cascaded value, inherit from parent instead of using user agent stylesheet value
+    }
+
+    &__subtitle {
+        color: #979797;
+    }
+
+    &__info {
+        color: var(--header-color);
+        font-size: 20px;
+        background: white;
+        border: 1px solid var(--header-color);
+        padding: 16px;
+    }
+
+    // override color of the title for premium
+    .package--premium &__title {
+        color: white;
+    }
+}
+
+// Define bg-color for the 3 boxes
+
+// TODO: Could just use 3 classes...no need to define 6 classes
+//       because package is always either plus, free or premium
+
+.package--plus {
+    float: left;
+    background-color: rgba(#d5ffdc, 0.95);
+}
+
+.package--free {
+    background-color: rgba(#eafced, 0.95);
+    float: right;
+    border-right: none;
+    border-left: 4px solid var(--header-color);
+    //text-align: right;
+    //@include clearfix;
+}
+
+.package--premium {
+    float: left;
+    background-color: rgba(#0e4f1f, 0.95);
+}

@@ -1,24 +1,33 @@
 //@import "settings.global";
+
+// TODO: Use Sass variables for colors
 @import "settings.colors";
 
-@import "tools.mixins";
+@import "tools.clearfix";
 
 // Here we start using tag/type selectors
 
 // The generic layer can be shared by all your projects
 @import "generic.box-sizing";
 @import "generic.reset";
+@import "generic.reset";
 
 
 @import "elements.base";
 
-
+// shared components
 @import "components.layout";
-@import "components.product-overview";
 @import "components.navigation";
+
+// styles for main page
+@import "components.product-overview";
 @import "components.buttons";
 @import "components.plan";
+@import "components.package";
 @import "components.features";
+
+// trump layer
+@import "utilities.clearfix";
 
 /* -------------------------------------------
               BEM explained
