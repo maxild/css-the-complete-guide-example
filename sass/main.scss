@@ -10,14 +10,14 @@
 // The generic layer can be shared by all your projects
 @import "generic.box-sizing";
 @import "generic.reset";
-@import "generic.reset";
-
 
 @import "elements.base";
 
+// OOCSS
+@import "objects";
+
 // shared components
 @import "components.layout";
-@import "components.navigation";
 
 // styles for main page
 @import "components.product-overview";

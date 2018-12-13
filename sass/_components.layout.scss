@@ -2,10 +2,22 @@
           main-header (BEM)
 ---------------------------------------------*/
 
+// The height of the fixed navigation bar is [1]
+
+main {
+    padding-top: 46px; // 2 * 8 + 30 [1]
+}
+
 .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 46px; // 2 * 8 + 30 [1]
     width: 100%;
     background: var(--header-bg-color);
     padding: 8px 16px;
+    margin: 0;
+    z-index: 1; // nav-bar stays on top of both plans and bg-image
 }
 
  /* brand/logo */
@@ -22,6 +34,79 @@
     font-weight: bold;
     font-size: 22px;
 }
+
+/* -------------------------------------------
+          main-nav (BEM)
+---------------------------------------------*/
+
+/* nav */
+.main-nav {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right; /* PROBLEM: nav is inline-block and therefore the width is determined by its content */
+    width: calc(100% - 74px); /* PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements */
+}
+
+/* ul */
+.main-nav__items {
+    /* Because we want to control width we have to reset (user agent )margin */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* li */
+.main-nav__item {
+    display: inline-block;
+    margin-left: 16px; /* IMPORTANT: margin is not part of width */
+}
+
+.main-nav__item a {
+    color: var(--header-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+    color: white;
+    border-bottom: 5px solid white;
+}
+
+/* call to action */
+/* same specificity as the rules for anchors inside normal main-nav__item so source code order matters */
+.main-nav__item--cta a {
+    color: white;
+    background: var(--light-red);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+    color: var(--light-red);
+    background: white;
+    border: none;
+}
+
+/*
+To style links appropriately, put the :hover rule after the :link and :visited rules
+but before the :active one, as defined by the LVHA-order: :link — :visited — :hover — :active.
+*/
+/*
+.main-nav__item a:link {color: blue;}
+.main-nav__item a:visited {color: purple;}
+.main-nav__item a:hover {color: red;}
+*/
+
+/* By moving the link 1 pixel to the right and 1 pixel down it will appear that the
+   link is being pushed like a button when clicked */
+/* .main-nav__item a:active {color: yellow;position:relative;top:1px;left:1px;} */
+
+/* tabbing to a link with the keyboard */
+/* .main-nav__item a:focus {color: red;} */
+
 
 /* -------------------------------------------
           main-footer (BEM)
