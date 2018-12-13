@@ -1,0 +1,378 @@
+@charset "UTF-8";
+/* -------------------------------------------
+     CSS Variables (custom properties)
+---------------------------------------------*/
+/* Custom properties do inherit. This means that if no value is set
+   for a custom property on a given element, the value of its parent is used */
+:root {
+  /* navigation (main-header) */
+  --header-bg-color: #2ddf5c;
+  --header-color: #0e4f1f;
+  /* logo and navigation text */
+  --main-title-color: #2ddf5c;
+  /* plan */
+  --plan-bg-color: #d5ffdc;
+  --plan-highlighted-bg-color: #19b84c;
+  /* colors */
+  --light-red: #ff1b68; }
+
+/* -------------------------------------------
+             Resets
+---------------------------------------------*/
+/* This selector is in most "old way" box-sizing resets */
+* {
+  box-sizing: border-box; }
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+/* html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+} */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0; }
+
+/* -------------------------------------------
+             main-header (BEM)
+---------------------------------------------*/
+.main-header {
+  width: 100%;
+  background: var(--header-bg-color);
+  padding: 8px 16px; }
+
+/* brand/logo */
+.main-header > div {
+  /* OBS: Inline-block elements are similar to inline eleme{nts, except they can have padding and margins added on all four sides. */
+  display: inline-block;
+  vertical-align: middle; }
+
+/* a */
+.main-header__brand {
+  color: var(--header-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px; }
+
+/* -------------------------------------------
+          main-nav (BEM)
+---------------------------------------------*/
+/* nav */
+.main-nav {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  /* PROBLEM: nav is inline-block and therefore the width is determined by its content */
+  width: calc(100% - 74px);
+  /* PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements */ }
+
+/* ul */
+.main-nav__items {
+  /* Because we want to control width we have to reset (user agent )margin */
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/* li */
+.main-nav__item {
+  display: inline-block;
+  margin-left: 16px;
+  /* IMPORTANT: margin is not part of width */ }
+
+.main-nav__item a {
+  color: var(--header-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 2px; }
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+  color: white;
+  border-bottom: 5px solid white; }
+
+/* call to action */
+/* same specificity as the rules for anchors inside normal main-nav__item so source code order matters */
+.main-nav__item--cta a {
+  color: white;
+  background: var(--light-red);
+  padding: 8px 16px;
+  border-radius: 8px; }
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+  color: var(--light-red);
+  background: white;
+  border: none; }
+
+/*
+To style links appropriately, put the :hover rule after the :link and :visited rules
+but before the :active one, as defined by the LVHA-order: :link — :visited — :hover — :active.
+*/
+/*
+.main-nav__item a:link {color: blue;}
+.main-nav__item a:visited {color: purple;}
+.main-nav__item a:hover {color: red;}
+*/
+/* By moving the link 1 pixel to the right and 1 pixel down it will appear that the
+   link is being pushed like a button when clicked */
+/* .main-nav__item a:active {color: yellow;position:relative;top:1px;left:1px;} */
+/* tabbing to a link with the keyboard */
+/* .main-nav__item a:focus {color: red;} */
+.o-title {
+  text-align: center; }
+
+/* -------------------------------------------
+             product-overview
+---------------------------------------------*/
+.product-overview {
+  background: url("../img/freedom.jpg");
+  width: 100%;
+  height: 528px;
+  padding: 10px; }
+
+.product-overview__title {
+  color: white;
+  font-family: 'Anton', sans-serif; }
+
+/* -------------------------------------------
+          button module/component (BEM)
+---------------------------------------------*/
+.button {
+  color: white;
+  background-color: var(--header-color);
+  font: inherit;
+  /* override font styles in user agent with our body styles */
+  font-weight: bold;
+  border: 1.5px solid var(--header-color);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer; }
+
+.button:hover,
+.button:active {
+  color: var(--header-color);
+  background-color: white; }
+
+.button:focus {
+  outline: none; }
+
+/* -------------------------------------------
+          plan module/component (BEM)
+---------------------------------------------*/
+.plan {
+  background: var(--plan-bg-color);
+  text-align: center;
+  padding: 16px;
+  margin: 8px;
+  display: inline-block;
+  width: 30%;
+  vertical-align: middle; }
+
+.plan__title {
+  color: var(--header-color); }
+
+.plan__price {
+  color: #858585; }
+
+/* multiple classes architecture => specificity higher */
+.plan--highlighted {
+  background: var(--plan-highlighted-bg-color);
+  color: white;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); }
+
+/* multiple classes architecture => specificity higher */
+.plan--highlighted .plan__title {
+  color: white; }
+
+/* multiple classes architecture => specificity higher */
+.plan--highlighted .plan__price {
+  color: var(--header-color); }
+
+/*
+The above is one of a few occasions where we’d use a descendant
+selector to modify an Element based on a Modifier on the Block.
+
+If using Sass, we would likely write this like so:
+
+.plan { }
+
+  .plan__title {
+
+    .plan--highlighted & { } // [2]
+
+  }
+
+.plan--highlighted { } // [1]
+
+Note that we do not nest a new instance of .plan__title {} inside
+of .plan--highlighted {} [1]. instead, we make use of Sass’ parent selectors
+to prepend .plan--highlighted onto the existing .plan__title {} selector [2].
+This means that all of our .plan__highlighted {}-related rules exist in
+one place, and aren’t spread throughout the file.
+
+This is general good practice when dealing with nested code: keep all of
+your context (e.g. all .plan__highlighted {} code) encapsulated in one location.
+*/
+.plan__annotation {
+  color: var(--plan-highlighted-bg-color);
+  background: white;
+  padding: 8px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 8px; }
+
+.plan__features {
+  list-style: none;
+  margin: 0;
+  reset: 0; }
+
+.plan__feature {
+  margin: 8px 0; }
+
+/* -------------------------------------------
+          key-features (BEM)
+---------------------------------------------*/
+.key-features {
+  background: #ff1b68;
+  margin-top: 80px;
+  padding: 16px; }
+
+.key-features__title {
+  color: white;
+  margin: 32px; }
+
+.key-features__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  /* works because li elements are turned into inline-block */ }
+
+.key-features__item {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top; }
+
+.key-features__image {
+  background: #ffcede;
+  width: 128px;
+  height: 128px;
+  border: 2px solid #424242;
+  border-radius: 50%;
+  margin: 0 auto;
+  /* center horizontally on the x-axis */ }
+
+.key-features__description {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white; }
+
+/* -------------------------------------------
+              BEM explained
+---------------------------------------------*/
+/*
+In BEM everything is a class and nothing is nested. That makes
+CSS specificity very flat and low, which is a good idea. It means
+you won't end up fighting with yourself over specificity.
+
+BAD example
+
+.nav .nav__listItem .btn--orange {
+  background-color: green;
+}
+
+OBS: A block (such as .nav) should never override the styles of another
+block or modifier (such as .btn--orange).
+
+FUNDAMENTAL PRINCIPLES
+
+1. Never overriding modifiers in an unrelated block.
+2. Avoiding making unnecessary parent elements when the child
+   can exist quite happily by itself.
+*/
+/* Block: A functionally independent page component that can be reused. */
+/*        In HTML, blocks are represented by the class attribute. */
+/*
+1. The block name describes its purpose ("What is it?" — menu or button), not
+   its state ("What does it look like?" — red or big).
+2. The block shouldn't influence its environment, meaning you
+   shouldn't set the external geometry (margin) or positioning for the block.
+3. You also shouldn't use CSS tag or ID selectors when using BEM.
+*/
+/* Element: A composite part (child element(s) of a block that can't be used separately from it. */
+/*
+1. The element name describes its purpose ("What is this?" — item, text, etc.), not
+   its state ("What type, or what does it look like?" — red, big, etc.).
+2. The structure of an element's full name is
+        block-name__element-name.
+   The element name is separated from the block name with a double underscore (__).
+3. An element is always part of a block, not another element. This means that element
+   names can't define a hierarchy such as block__elem1__elem2.
+4. The block name defines the namespace, which guarantees that the elements are dependent
+   on the block (block__elem). This allows you to change a block's DOM structure without
+   making changes in the css code for each separate element
+*/
+/* Modifier: An entity that defines the appearance, state, or behavior of a block or element. */
+/*
+1. The modifier name describes its appearance ("What size?" or "Which theme?"
+   and so on — size_s or theme_islands), its state ("How is it different from
+   the others?" — disabled, focused, etc.) and its behavior ("How does it behave?"
+   or "How does it respond to the user?" — such as directions_left-top).
+2. The modifier name is separated from the block or element name by a single underscore (_).
+   OBS: We use 'double dashes' here => SMACSS?!?
+
+.block {}
+.block__element {}
+.block--modifier {}
+.block__element--modifier {}
+
+.menu {}
+.menu__item {}
+.menu__item--featured {}
+.menu--footer {}
+*/
+/*
+BEM and Bootstrap-Sass:
+
+1. Bootstrap without the Debt: Sass @extend
+
+.primary-rail {
+    @extend .pull-left, .col-md-6, .small;
+}
+
+Build with utility, extract components as necessary (good for prototyping)
+
+2. Use bootstrap css without having a single bootstrap class in your markup.
+
+
+HOW TO GET STARTED
+a. Flatten CSS selectors (use flattened/BEM'ed class selectors...don't use id-selectors!!!!)
+b. Organize your code (and @import in Sass)
+c. make your classes do one thing well
+d. decouple for reusability
+e. try a preprocessor
+
+*/
+/*
+
+We want:
+
+Modularity    -- Namespacing...taming global namespace
+Encapsulation -- File structure
+Predictablity -- syntax, taming cascade and specificity, removing classes
+
+I suggest to switch CSS architecture in our projects to Harry Robert's ITCSS and BEMIT.
+
+* ITCSS was introduced in the Net Magazine in June 2015 - http://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731
+* The article is available online here https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+* ITCSS screencast - https://www.youtube.com/watch?v=hz76JIU_xB0
+* ITCSS code from the screencast - https://github.com/itcss/itcss-netmag
+* another ITCSS project example https://github.com/csswizardry/frcss
+* BEMIT - http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+
+Also worth to check - https://github.com/inuitcss/getting-started - which is based on ITCSS too (but it doesn't contain any components).
+
+inuitcss is a good place to check when you want to expand your ITCSS skills and study how things should be or could be done.
+
+*/

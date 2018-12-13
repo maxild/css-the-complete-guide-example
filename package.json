@@ -1,0 +1,24 @@
+{
+    "name": "css-the-complete-guide-example",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "help": "node-sass --help",
+        "sass": "node-sass sass/main.scss css/styles.css",
+        "watch": "node-sass sass/main.scss css/styles.css -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maxild/css-the-complete-guide-example.git"
+    },
+    "author": "Morten Maxild",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/maxild/css-the-complete-guide-example/issues"
+    },
+    "homepage": "https://github.com/maxild/css-the-complete-guide-example#readme",
+    "devDependencies": {
+        "node-sass": "^4.11.0"
+    }
+}

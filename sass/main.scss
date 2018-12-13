@@ -144,7 +144,7 @@ but before the :active one, as defined by the LVHA-order: :link — :visited —
 ---------------------------------------------*/
 
 .product-overview {
-    background: url("freedom.jpg");
+    background: url("../img/freedom.jpg");
     width: 100%;
     height: 528px;
     padding: 10px;
@@ -207,7 +207,7 @@ but before the :active one, as defined by the LVHA-order: :link — :visited —
 .plan--highlighted {
     background: var(--plan-highlighted-bg-color);
     color: white;
-    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* multiple classes architecture => specificity higher */
@@ -220,11 +220,37 @@ but before the :active one, as defined by the LVHA-order: :link — :visited —
     color: var(--header-color);
 }
 
+/*
+The above is one of a few occasions where we’d use a descendant
+selector to modify an Element based on a Modifier on the Block.
+
+If using Sass, we would likely write this like so:
+
+.plan { }
+
+  .plan__title {
+
+    .plan--highlighted & { } // [2]
+
+  }
+
+.plan--highlighted { } // [1]
+
+Note that we do not nest a new instance of .plan__title {} inside
+of .plan--highlighted {} [1]. instead, we make use of Sass’ parent selectors
+to prepend .plan--highlighted onto the existing .plan__title {} selector [2].
+This means that all of our .plan__highlighted {}-related rules exist in
+one place, and aren’t spread throughout the file.
+
+This is general good practice when dealing with nested code: keep all of
+your context (e.g. all .plan__highlighted {} code) encapsulated in one location.
+*/
+
 .plan__annotation {
     color: var(--plan-highlighted-bg-color);
     background: white;
     padding: 8px;
-    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
 }
 
