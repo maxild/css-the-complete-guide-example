@@ -6,7 +6,7 @@
     "scripts": {
         "help": "node-sass --help",
         "sass": "node-sass sass/main.scss css/styles.css",
-        "watch": "node-sass sass/main.scss css/styles.css -w"
+        "watch": "node-sass -r --watch sass/main.scss css/styles.css"
     },
     "repository": {
         "type": "git",

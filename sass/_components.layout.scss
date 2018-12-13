@@ -1,0 +1,59 @@
+/* -------------------------------------------
+          main-header (BEM)
+---------------------------------------------*/
+
+.main-header {
+    width: 100%;
+    background: var(--header-bg-color);
+    padding: 8px 16px;
+}
+
+ /* brand/logo */
+.main-header > div {
+    /* OBS: Inline-block elements are similar to inline eleme{nts, except they can have padding and margins added on all four sides. */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* a */
+.main-header__brand {
+    color: var(--header-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* -------------------------------------------
+          main-footer (BEM)
+---------------------------------------------*/
+
+.main-footer {
+
+    background-color: black;
+    padding: 16px;
+    margin-top: 28px;
+
+    &__links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    &__link {
+        display: inline-block;
+        margin: 0 16px;
+
+        // specificity (0,1,1) here
+        & > a {
+            color: white;
+            text-decoration: none;
+
+            &:link,
+            &:hover {
+                color: #ccc;
+            }
+        }
+    }
+
+}
