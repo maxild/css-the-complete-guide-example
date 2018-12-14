@@ -3,7 +3,7 @@
 ---------------------------------------------*/
 
 .plans__title {
-    color: var(--main-title-color);
+    color: $color-brand;
     font-weight: bold;
     text-align: center;
 }
@@ -19,7 +19,7 @@
 ---------------------------------------------*/
 
 .plan {
-    background: var(--plan-bg-color);
+    background: $color-brand-light;
     text-align: center;
     padding: 16px;
     margin: 8px;
@@ -29,28 +29,28 @@
 }
 
 .plan__title {
-    color: var(--header-color);
+    color: $color-brand-much-darker;
 }
 
 .plan__price {
-    color: #858585;
+    color: $color-gray-light;
 }
 
 /* multiple classes architecture => specificity higher */
 .plan--highlighted {
-    background: var(--plan-highlighted-bg-color);
-    color: white;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    background: $color-brand-dark;
+    color: $color-white;
+    box-shadow: 2px 2px 2px 2px $color-shadow;
 }
 
 /* multiple classes architecture => specificity higher */
 .plan--highlighted .plan__title {
-    color: white;
+    color: $color-white;
 }
 
 /* multiple classes architecture => specificity higher */
 .plan--highlighted .plan__price {
-    color: var(--header-color);
+    color: $color-brand-much-darker;
 }
 
 /*
@@ -80,10 +80,10 @@ your context (e.g. all .plan__highlighted {} code) encapsulated in one location.
 */
 
 .plan__annotation {
-    color: var(--plan-highlighted-bg-color);
-    background: white;
+    color: $color-brand-dark;
+    background: $color-white;
     padding: 8px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px $color-shadow;
     border-radius: 8px;
 }
 

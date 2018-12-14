@@ -3,11 +3,11 @@
 ---------------------------------------------*/
 
 .button {
-    color: white;
-    background-color: var(--header-color);
+    color: $color-btn;
+    background-color: $color-bg-btn;
     font: inherit; /* override font styles in user agent with our body styles */
     font-weight: bold;
-    border: 1.5px solid var(--header-color);
+    border: 1.5px solid $color-bg-btn;
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
@@ -15,8 +15,8 @@
 
 .button:hover,
 .button:active {
-    color: var(--header-color);
-    background-color: white;
+    color: $color-btn-hover;
+    background-color: $color-bg-btn-hover;
 
 }
 

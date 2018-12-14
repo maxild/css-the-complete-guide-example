@@ -1,13 +1,22 @@
+
+.packages-overview {
+    @include background-image("../img/plans-background.jpg", $height: 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; // image stays behind the plans
+}
+
 .packages {
-    margin: 0;
     padding: 0;
+    margin: 0;
+    @include below-main-header();
     @include clearfix;
 }
 
 .package {
-
     position: relative; // positioning context
-    border: 4px solid var(--header-color);
+    border: 4px solid $color-brand-much-darker;
     border-left: none;
     margin: 16px 0;
     width: 80%;
@@ -17,7 +26,7 @@
     &:hover,
     &:active {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // x-offset y-offset blur-radius color
-        border-color: #ff5454;
+        border-color: $color-red-highligt;
     }
 
     & > a {
@@ -34,25 +43,25 @@
         margin: 0; // h1 by default has top/bottom-margin
         padding: 8px;
         font-size: 12px;
-        color: white;
-        background-color: var(--light-red);
+        color: $color-white;
+        background-color: $color-red;
     }
 
     &__subtitle {
-        color: #979797;
+        color: $color-gray-light;
     }
 
     &__info {
-        color: var(--header-color);
+        color: $color-brand-much-darker;
         font-size: 20px;
-        background: white;
-        border: 1px solid var(--header-color);
+        background: $color-white;
+        border: 1px solid $color-brand-much-darker;
         padding: 16px;
     }
 
     // override color of the title for premium
     .package--premium &__title {
-        color: white;
+        color: $color-white;
     }
 }
 
@@ -63,19 +72,18 @@
 
 .package--plus {
     float: left;
-    background-color: rgba(#d5ffdc, 0.95);
+    background-color: rgba($color-brand-light, 0.95);
 }
 
 .package--free {
-    background-color: rgba(#eafced, 0.95);
+    background-color: rgba($color-brand-light, 0.95);
     float: right;
     border-right: none;
-    border-left: 4px solid var(--header-color);
+    border-left: 4px solid $color-brand-much-darker;
     //text-align: right;
-    //@include clearfix;
 }
 
 .package--premium {
     float: left;
-    background-color: rgba(#0e4f1f, 0.95);
+    background-color: rgba($color-brand-much-darker, 0.95);
 }

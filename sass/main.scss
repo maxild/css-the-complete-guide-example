@@ -1,9 +1,10 @@
 //@import "settings.global";
 
-// TODO: Use Sass variables for colors
 @import "settings.colors";
+@import "settings.global";
 
 @import "tools.clearfix";
+@import "tools.background-image";
 
 // Here we start using tag/type selectors
 
@@ -12,9 +13,6 @@
 @import "generic.reset";
 
 @import "elements.base";
-
-// OOCSS
-@import "objects";
 
 // shared components
 @import "components.layout";

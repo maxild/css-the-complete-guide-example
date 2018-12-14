@@ -1,17 +1,25 @@
-/* -------------------------------------------
-     CSS Variables (custom properties)
----------------------------------------------*/
+// Color palette
+$color-brand:             #2ddf5c;
+$color-brand-light:       #d5ffdc;
+$color-brand-dark:        #19b84c;
+$color-brand-much-darker: #0e4f1f;
 
-/* Custom properties do inherit. This means that if no value is set
-   for a custom property on a given element, the value of its parent is used */
-:root {
-    /* navigation (main-header) */
-    --header-bg-color: #2ddf5c;
-    --header-color: #0e4f1f; /* logo and navigation text */
-    --main-title-color: #2ddf5c;
-    /* plan */
-    --plan-bg-color: #d5ffdc;
-    --plan-highlighted-bg-color: #19b84c;
-    /* colors */
-    --light-red: #ff1b68;
-}
+$color-white:           white;
+
+$color-gray:            #666;
+$color-gray-light:      #979797;
+$color-gray-lighter:    #ccc;
+$color-gray-dark:       #424242;
+
+$color-red:             #ff1b68;
+$color-red-light:       #ffcede;
+$color-red-highligt:    #ff5454;
+
+$color-highlight:       rgba(255, 255, 255, 0.05);
+$color-shadow:          rgba(0, 0, 0, 0.5);
+
+// Buttons
+$color-btn:          $color-white;
+$color-bg-btn:       $color-brand-much-darker;
+$color-btn-hover:    $color-brand-much-darker;
+$color-bg-btn-hover: $color-white;

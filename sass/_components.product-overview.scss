@@ -3,13 +3,12 @@
 ---------------------------------------------*/
 
 .product-overview {
-    background: url("../img/freedom.jpg");
-    width: 100%;
-    height: 528px;
-    padding: 10px;
+    @include background-image("../img/freedom.jpg", $height: 528px);
+    padding: 10px; // ????
 }
 
 .product-overview__title {
-    color: white;
+    color: $color-white;
     font-family: 'Anton', sans-serif;
 }
+

@@ -1,0 +1,11 @@
+@mixin below-main-header {
+    // main-header (logo + main-nav) is taking out of the flow with poition: fixed
+    margin-top: $main-header-height;
+}
+
+@mixin background-image($url, $height) {
+    background: url($url);
+    width: 100%;
+    height: $height;
+    @include below-main-header();
+}

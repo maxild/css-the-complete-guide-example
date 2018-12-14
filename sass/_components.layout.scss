@@ -2,19 +2,13 @@
           main-header (BEM)
 ---------------------------------------------*/
 
-// The height of the fixed navigation bar is [1]
-
-main {
-    padding-top: 46px; // 2 * 8 + 30 [1]
-}
-
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
-    height: 46px; // 2 * 8 + 30 [1]
+    height: $main-header-height;
     width: 100%;
-    background: var(--header-bg-color);
+    background: $color-brand;
     padding: 8px 16px;
     margin: 0;
     z-index: 1; // nav-bar stays on top of both plans and bg-image
@@ -29,7 +23,7 @@ main {
 
 /* a */
 .main-header__brand {
-    color: var(--header-color);
+    color: $color-brand-much-darker;
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
@@ -44,7 +38,7 @@ main {
     display: inline-block;
     vertical-align: middle;
     text-align: right; /* PROBLEM: nav is inline-block and therefore the width is determined by its content */
-    width: calc(100% - 74px); /* PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements */
+    width: calc(100% - 74px); /* PROBLEM: inline-block element need more subtracted than width of div because of $color-white-space between div and nav elements */
 }
 
 /* ul */
@@ -62,7 +56,7 @@ main {
 }
 
 .main-nav__item a {
-    color: var(--header-color);
+    color: $color-brand-much-darker;
     text-decoration: none;
     font-weight: bold;
     padding-bottom: 2px;
@@ -70,23 +64,23 @@ main {
 
 .main-nav__item a:hover,
 .main-nav__item a:active {
-    color: white;
-    border-bottom: 5px solid white;
+    color: $color-white;
+    border-bottom: 5px solid $color-white;
 }
 
 /* call to action */
 /* same specificity as the rules for anchors inside normal main-nav__item so source code order matters */
 .main-nav__item--cta a {
-    color: white;
-    background: var(--light-red);
+    color: $color-white;
+    background: $color-red;
     padding: 8px 16px;
     border-radius: 8px;
 }
 
 .main-nav__item--cta a:hover,
 .main-nav__item--cta a:active {
-    color: var(--light-red);
-    background: white;
+    color: $color-red;
+    background: $color-white;
     border: none;
 }
 
@@ -131,12 +125,12 @@ but before the :active one, as defined by the LVHA-order: :link — :visited —
 
         // specificity (0,1,1) here
         & > a {
-            color: white;
+            color: $color-white;
             text-decoration: none;
 
             &:link,
             &:hover {
-                color: #ccc;
+                color: $color-gray-lighter;
             }
         }
     }
