@@ -1,1 +1,5 @@
 $main-header-height: 46px;
+$main-header-padding-height: 8px;
+$main-header-content-height: $main-header-height - 2 * $main-header-padding-height;
+
+$main-header-logo-width: 100px;

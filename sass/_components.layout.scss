@@ -9,7 +9,7 @@
     height: $main-header-height;
     width: 100%;
     background: $color-brand;
-    padding: 8px 16px;
+    padding: $main-header-padding-height 16px;
     margin: 0;
     z-index: 1; // nav-bar stays on top of both plans and bg-image
 }
@@ -24,9 +24,24 @@
 /* a */
 .main-header__brand {
     color: $color-brand-much-darker;
+
+    // The required alt attribute specifies an alternate text
+    // for an image, if the image cannot be displayed.
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
+
+    // now we can set height in percentages on the img element
+    display: inline-block;
+    width: $main-header-logo-width;
+    height: $main-header-content-height;
+
+    img {
+        height: 100%;
+        // img elements cannot be positioned and sized like bg-images
+        // (negative) margins is about the only hack that works
+        //margin-top: -10px;
+    }
 }
 
 /* -------------------------------------------
@@ -38,7 +53,7 @@
     display: inline-block;
     vertical-align: middle;
     text-align: right; /* PROBLEM: nav is inline-block and therefore the width is determined by its content */
-    width: calc(100% - 74px); /* PROBLEM: inline-block element need more subtracted than width of div because of $color-white-space between div and nav elements */
+    width: calc(100% - #{$main-header-logo-width + 10px}); /* PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements */
 }
 
 /* ul */
