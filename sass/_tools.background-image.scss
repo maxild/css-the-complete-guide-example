@@ -3,8 +3,7 @@
     margin-top: $main-header-height;
 }
 
-@mixin background-image($url, $height) {
-    background: url($url);
+@mixin background-image-container($height) {
     width: 100%;
     height: $height;
     @include below-main-header();

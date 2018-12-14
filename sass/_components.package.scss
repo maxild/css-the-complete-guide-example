@@ -1,6 +1,7 @@
 
 .packages-overview {
-    @include background-image("../img/plans-background.jpg", $height: 100%);
+    background-image: url("../img/plans-background.jpg");
+    @include background-image-container($height: 100%);
     position: fixed;
     top: 0;
     left: 0;

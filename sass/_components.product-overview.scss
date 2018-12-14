@@ -3,8 +3,17 @@
 ---------------------------------------------*/
 
 .product-overview {
-    @include background-image("../img/freedom.jpg", $height: 528px);
+    @include background-image-container($height: 528px);
     position: relative;
+    //border: 5px dashed red;
+    padding: 10px; // TODO: only illustrates the difference between content-box vs padding-box=
+    background: url("../img/freedom.jpg") left 10% bottom 20%/cover no-repeat border-box;
+    // background-image: url("../img/freedom.jpg");
+    // background-position: left 10% bottom 20%;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-origin: padding-box; // because size is 'cover' top and bottom should be clipped
+    // background-clip: padding-box;
 }
 
 .product-overview__title {
