@@ -1,6 +1,7 @@
 
 .packages-overview {
-    background-image: url("../img/plans-background.jpg");
+    background: url("../img/plans-background.jpg") center/cover;
+    filter: grayscale(100%);
     @include background-image-container($height: 100%);
     position: fixed;
     top: 0;
