@@ -5,15 +5,24 @@
 .product-overview {
     @include background-image-container($height: 528px);
     position: relative;
-    //border: 5px dashed red;
-    padding: 10px; // TODO: only illustrates the difference between content-box vs padding-box=
-    background: url("../img/freedom.jpg") left 10% bottom 20%/cover no-repeat border-box;
+
+    // stacking 2 bg-images and a solid color: transparent
+    background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+                url("../img/freedom.jpg") left 10% bottom 20%/cover no-repeat border-box, // [1]
+                $color-brand-light;
+
+    //bg properties, assigned to each stacked layer above [1], and separeted by commas
+
     // background-image: url("../img/freedom.jpg");
     // background-position: left 10% bottom 20%;
     // background-size: cover;
     // background-repeat: no-repeat;
     // background-origin: padding-box; // because size is 'cover' top and bottom should be clipped
     // background-clip: padding-box;
+
+    // TODO: only illustrates the difference between content-box vs padding-box in background-origin/background-clip
+    //border: 5px dashed red;
+    //padding: 10px;
 }
 
 .product-overview__title {
