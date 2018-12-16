@@ -10,7 +10,10 @@
 
 .plans__list {
     width: 80%;
-    margin: 0 auto;     // centrer selve .plans__list elementet
+    // NOTE: This auto-centering only works for block-level elements with a defined width
+    margin: auto;   // [1] centrer selve .plans__list elementet
+    // The following is equivalent to [1]
+    //margin: 0 auto;     //
     text-align: center; // centrer .plan elementerne (de er inline-block)
 }
 

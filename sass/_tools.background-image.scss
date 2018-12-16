@@ -9,7 +9,21 @@
     @include below-main-header();
 }
 
+// -----------------------------------------------------------------------------------------------
+//    Definition: Containing Block (CB)
+//    =================================
+//
+// position: fixed           => %-lengths is relative to the viewport (CB == Viewport)
+// position: absolute        => %-lengths is relative to the positioning context (PC)
+//                              ancestor element (base-lengths == **padding-box** of CB element)
+// position: relative/stativ => %-lengths is relative to the first block-level ancestor element.
+//                              (base lengths == **content-box** of CB element)
 // ------------------------------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------------------------------
+// BROWSER HACK ON WINDOWS
+// =======================
 //
 // Hiding Scrollbars on Windows machines
 //
