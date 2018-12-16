@@ -6,7 +6,10 @@
     @include background-image-container($height: 528px);
     position: relative;
 
-    // stacking 2 bg-images and a solid color: transparent
+    // 1. stacking 2 bg-images and a solid color: transparent
+    // 2. background-position and background-size separated by '/'
+    // 3. shorthand notation will overwrite all sub properties, because
+    //    non specified values will get default values
     background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
                 url("../img/freedom.jpg") left 10% bottom 20%/cover no-repeat border-box, // [1]
                 $color-brand-light;

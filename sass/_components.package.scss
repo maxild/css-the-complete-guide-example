@@ -1,7 +1,7 @@
 
 .packages-overview {
     background: url("../img/plans-background.jpg") center/cover;
-    filter: grayscale(100%);
+    filter: grayscale(100%); // IE doesn't support this (needs polyfill)
     @include background-image-container($height: 100%);
     position: fixed;
     top: 0;
