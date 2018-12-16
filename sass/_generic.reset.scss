@@ -3,6 +3,16 @@ html {
     padding: 0;
     // this is a bit hacky, because this rule has to apply to all ancestors in order to style .backdrop
     // height: 100%;
+
+    //
+    // configuring font-size for all pages (PROBLEM: absolute/px font-sizes will not change)
+    //
+
+    // font-size: 1em;
+    // font-size: 1.5em;
+
+    //font-size: 100%;
+    font-size: 100%;
 }
 
 body {

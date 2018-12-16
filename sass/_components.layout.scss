@@ -1,3 +1,5 @@
+// TODO: main-header and main-nav have absolute lengths (pixels)
+
 /* -------------------------------------------
           main-header (BEM)
 ---------------------------------------------*/
@@ -9,7 +11,7 @@
     height: $main-header-height;
     width: 100%;
     background: $color-brand;
-    padding: $main-header-padding-height 16px;
+    padding: $main-header-padding-height 1rem;
     margin: 0;
     z-index: 1; // nav-bar stays on top of both plans and bg-image
 }
@@ -48,8 +50,16 @@
           backdrop (BEM)
 ---------------------------------------------*/
 
+// TODO: This is a state (probably used by javascript) or a modifier of a block
+
+// OBS: The ::backdrop CSS pseudo-element is a box the size of the viewport
+// which is rendered immediately beneath any element being presented in
+// full-screen mode. The ::backdrop pseudo-element makes it possible to obscure,
+// style, or completely hide everything located below the element when it's
+// the topmost one in the top layer.
 .backdrop {
     position: fixed;
+    display: none;
     top: 0;
     left: 0;
     z-index: 100;
@@ -68,7 +78,7 @@
     display: inline-block;
     vertical-align: middle;
     text-align: right; /* PROBLEM: nav is inline-block and therefore the width is determined by its content */
-    width: calc(100% - #{$main-header-logo-width + 10px}); /* PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements */
+    width: calc(100% - #{$main-header-logo-width + .5rem}); /* PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements */
 }
 
 /* ul */
@@ -82,7 +92,7 @@
 /* li */
 .main-nav__item {
     display: inline-block;
-    margin-left: 16px; /* IMPORTANT: margin is not part of width */
+    margin-left: 1rem; /* IMPORTANT: margin is not part of width */
 }
 
 .main-nav__item a {
@@ -139,8 +149,8 @@ but before the :active one, as defined by the LVHA-order: :link — :visited —
 .main-footer {
 
     background-color: black;
-    padding: 16px;
-    margin-top: 28px;
+    padding: 1rem;
+    margin-top: 1.6rem;
 
     &__links {
         list-style: none;
@@ -151,7 +161,7 @@ but before the :active one, as defined by the LVHA-order: :link — :visited —
 
     &__link {
         display: inline-block;
-        margin: 0 16px;
+        margin: 0 1rem;
 
         // specificity (0,1,1) here
         & > a {

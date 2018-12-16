@@ -2,42 +2,47 @@
 // Some hacky layout
 .testimonial-container {
     width: 90%;
-    margin: #{36px + $main-header-height} auto 0 auto; // center
+    // margin-top is 2rem to the main-nav
+    margin: calc(2rem + #{$main-header-height}) auto 0 auto; // center
 }
 
-// Component
+// Component: box of two inner boxes
 .testimonial {
-    font-size: 20px;
-    margin: 48px 0;
+    font-size: 1.2rem; // TODO: This is really not needed because all text is sized in rem's below
+    margin: 3rem 0;
 
+    // image-box
     &__image-container {
         width: 65%;
+        max-width: 580px;
         display: inline-block;
         vertical-align: middle;
-        box-shadow: 3px 3px 5px $color-shadow-light;
+        box-shadow: 3px 3px 5px 3px $color-shadow-light;
     }
 
-    &__image {
-        width: 100%;
-        vertical-align: top; // hack to get rid off white-space border when using box-shadow on the container
-        // display: block; // This hack will also remove the whitespace
-    }
+        &__image {
+            width: 100%;
+            vertical-align: top; // hack to get rid off white-space border when using box-shadow on the container
+            // display: block; // This hack will also remove the whitespace
+        }
 
+    // text-box
     &__info {
-        padding: 14px;
+        padding: .9rem;
         width: 30%;
         display: inline-block;
         vertical-align: middle;
         text-align: right;
     }
         &__name {
-            margin: 3px;
+            font-size: 2rem;
+            margin: .2rem;
             color: #ff5454;
         }
 
         &__subtitle {
+            font-size: 1.1rem;
             margin: 0;
-            font-size: 18px;
             color: #ccc;
 
             a {
@@ -52,7 +57,8 @@
         }
 
         &__text {
-            margin: 3px;
+            font-size: 1.2rem;
+            margin: .2rem;
         }
 }
 
