@@ -3,7 +3,11 @@
 ---------------------------------------------*/
 
 .product-overview {
-    @include background-image-container($height: 528px);
+    // NOTE: vh/vw units require IE11 or modern browsers!!!!
+    // using %-units is better when containing block is the viewport
+    @include background-image-container($height: 33vh);
+
+    // Create positioning context
     position: relative;
 
     // 1. stacking 2 bg-images and a solid color: transparent
@@ -11,7 +15,7 @@
     // 3. shorthand notation will overwrite all sub properties, because
     //    non specified values will get default values
     background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-                url("../img/freedom.jpg") left 10% bottom 20%/cover no-repeat border-box, // [1]
+                url("../img/freedom.jpg") left 10% bottom 70%/cover no-repeat border-box, // [1]
                 $color-brand-light;
 
     //bg properties, assigned to each stacked layer above [1], and separeted by commas

@@ -9,7 +9,7 @@
     font-weight: bold;
     border: 1.5px solid $color-bg-btn;
     padding: .5rem;
-    border-radius: .5rem;
+    border-radius: 8px; // keep pixels here
     cursor: pointer;
 }
 

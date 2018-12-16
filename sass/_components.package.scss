@@ -2,7 +2,7 @@
 .packages-overview {
     background: url("../img/plans-background.jpg") center/cover;
     filter: grayscale(100%); // IE doesn't support this (needs polyfill)
-    @include background-image-container($height: 100%);
+    @include background-image-container($height: 100vh);
     position: fixed;
     top: 0;
     left: 0;
@@ -44,7 +44,7 @@
         right: 1.5rem;
         margin: 0; // h1 by default has top/bottom-margin
         padding: .5rem;
-        font-size: .75rem;
+        font-size: .8rem;
         color: $color-white;
         background-color: $color-red;
         z-index: 10;
