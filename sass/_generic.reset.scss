@@ -1,4 +1,13 @@
-html, body, main {
+html {
     margin: 0;
     padding: 0;
+    // this is a bit hacky, because this rule has to apply to all ancestors in order to style .backdrop
+    // height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    // this is a bit hacky, because this rule has to apply to all ancestors in order to style .backdrop
+    // height: 100%;
 }
