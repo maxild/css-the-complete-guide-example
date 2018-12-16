@@ -1,0 +1,139 @@
+/* Base: unnecessary */
+/* ul, li {
+    margin: 0;
+    padding: 0;
+} */
+
+/* Module: Nav
+    The nav module is its own thing. Its responsibility is to style the top-navigation and
+    position a nav__dropdown container (canvas) for other modules to design in isolation
+*/
+
+/*
+The depth of applicability is not greater than (.nav > li:hover > .nav__dropdown).
+The nav module will therefore not bleed into other modules, and the CSS/HTML is
+nicely decoupled and the container (nav) and descendant modules (menu, megadropdown,
+searchbox) are also nicely decoupled. */
+
+/* NOTE: All modules can be tested in isolation. There are no dependencies in CSS a la
+
+.nav > li > a > .menu
+.nav > li > a > .nav
+.nav > li > a > * (anything)
+.nav__dropdown > * (anything)
+
+IMPORTANT: The depth of applicability stops at the link (a element) and the nav__dropdown container element
+*/
+
+
+
+
+/* NOTE: All selectors for nav use only .nav and .nav__dropdown classes */
+
+.nav {
+    margin: 0;
+    padding: 0;
+}
+
+.nav > li {
+    margin-right: -4px; /* Fighting the Space Between Inline Block Elements */
+    display: inline-block;
+    list-style: none;
+    width: 20%;
+    vertical-align: top;
+}
+
+.nav > li > a {
+    color: white;
+    background-color: blue;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    border: 1px solid red;
+    margin-bottom: 10px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:active {
+    color: blue;
+    background-color: white;
+}
+
+.nav__dropdown {
+    display:none;
+}
+
+/*
+Could avoid the .nav__dropdown class selector and use a pseudo-class selector instead
+but classitis is not a problem. OOCSS, SMACSS and BEM are CSS methodologies that emerged
+a few years ago. They have reversed good practices.
+*/
+/* .nav > li:hover > :last-child { */
+.nav > li:hover > .nav__dropdown {
+    display: block;
+}
+
+/* Module: Menu that can be tested on a separate page */
+
+/* NOTE: All selectors for menu use only .menu  */
+
+.menu {
+    width: 100%;
+    padding: 0;
+}
+
+.menu > li {
+    list-style: none;
+    display: block;
+    /* width: 100%; */
+}
+
+.menu > li > a {
+    display: block;
+    /* width: 100%; */
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    border: 1px solid red;
+}
+
+.menu > li > a:hover,
+.menu > li > a:active {
+    color: blue;
+    background-color: white;
+}
+
+
+
+/* Module: MegaDropdown that can be tested on a separate page */
+
+/* NOTE: All selectors for megadropdown use only .megadropdown, .megadropdown__title and .megadropdown__footer */
+
+.megadropdown {
+    text-align: center;
+    width: 50vw;
+    border: 1px solid black;
+}
+
+.megadropdown__title {
+    display: inline-block;
+    border-bottom: 1px solid black;
+    vertical-align: center;
+}
+
+.megadropdown__footer {
+    color: pink;
+    background-color: #666;
+    font-size: 80%;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Module: SearchBox that can be tested on a separate page */
+
+.searchbox {
+    border: 1px solid black;
+    padding: 10px;
+    width: 50vw;
+}

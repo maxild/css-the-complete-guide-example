@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sample navigation with dropdown/menu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="nav.css">
+    </head>
+
+    <body>
+
+        <ul class="nav">
+            <li>
+                <a href="#">Mega Dropdown</a>
+                <!--
+                    We use two div's here. One for .nav__dropdown and another for
+                    .megadropdown. This is called 'divitis' by some, but I call it
+                    single responsibility principle.
+
+                    We should not create two modules (two sets of css properties)
+                    that bot try to style the same element on the page.
+
+                    The div's should each have one responsibility. .nav__dropdown
+                    will display/hide. .megadropdown will do its own thing on its
+                    content.
+
+                    In the case of .nav__dropdown the display logic is fairly simple.
+                    But in general is is better to separate concerns.
+
+                    Also when using razor/handlebar/??? templating we want to be able to write
+
+                    <div class="nav__dropdown">
+                        {{content}}
+                    </div>
+
+                    and using a partial to render the megadropdown/searchbox or what not.
+                -->
+                <div class="nav__dropdown">
+                    <div class="megadropdown">
+                        <h3 class="megadropdown__title">Headline 3</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores deserunt iste commodi eaque tenetur omnis quaerat enim vitae suscipit quasi eligendi possimus, alias autem? Blanditiis nihil accusantium corporis illum perferendis!</p>
+                        <p class="megadropdown__footer">My footer</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">Menu</a>
+                <div class="nav__dropdown">
+                    <ul class="menu">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Search</a>
+                <div class="nav__dropdown">
+                    <div class="searchbox">
+                    <form>
+                        <p>
+                            <label for="search">Search</label>
+                            <input name="search"></input>
+                            <input type="submit" value="Search"/>
+                        </p>
+                    </form>
+                </div>
+                </div>
+            </li>
+        </ul>
+
+    </body>
+
+</html>
