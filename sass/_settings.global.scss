@@ -1,7 +1,13 @@
-$main-header-height: 3rem;
+$main-header-height: 4rem;
 $main-header-padding-height: .5rem;
 $main-header-content-height: $main-header-height - 2 * $main-header-padding-height;
 
 // This is the length required to render the alt text of the logo image
 // This langth actually ruins the main-nav component for small screen widths
-$main-header-logo-width: 8rem;
+$main-header-hamburger-width: 3rem;
+$main-header-logo-width: 4rem;
+
+$z-index-modal:    200;
+$z-index-backdrop: 100;
+$z-index-mobile-nav: 101;
+

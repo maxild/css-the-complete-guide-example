@@ -1,3 +1,6 @@
+/* -------------------------------------------
+          _components.package.scss
+---------------------------------------------*/
 
 .packages-overview {
     background: url("../img/plans-background.jpg") center/cover;
@@ -15,6 +18,10 @@
     @include below-main-header();
     @include clearfix;
 }
+
+/* -------------------------------------------
+          package (BEM)
+---------------------------------------------*/
 
 .package {
     position: relative; // positioning context

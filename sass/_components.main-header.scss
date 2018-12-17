@@ -1,0 +1,46 @@
+/* -------------------------------------------
+          _components.main-header.scss
+---------------------------------------------*/
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: $main-header-height;
+    width: 100%;
+    background: $color-brand;
+    padding: $main-header-padding-height 1rem;
+    margin: 0;
+    z-index: 1; // nav-bar stays on top of both plans and bg-image
+}
+
+ /* brand/logo */
+.main-header > div {
+    /* OBS: Inline-block elements are similar to inline eleme{nts, except they can have padding and margins added on all four sides. */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* a */
+.main-header__brand {
+    color: $color-brand-much-darker;
+
+    // The required alt attribute specifies an alternate text
+    // for an image, if the image cannot be displayed.
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem;
+
+    // now we can set height in percentages on the img element
+    display: inline-block;
+    width: $main-header-logo-width;
+    height: $main-header-content-height;
+    vertical-align: middle;
+
+    img {
+        height: 100%;
+        // img elements cannot be positioned and sized like bg-images
+        // (negative) margins is about the only hack that works
+        //margin-top: -10px;
+    }
+}

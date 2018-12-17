@@ -1,0 +1,10 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin center() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

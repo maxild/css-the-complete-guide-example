@@ -1,0 +1,55 @@
+/* -------------------------------------------
+          _components.nav-links.scss
+---------------------------------------------*/
+// @extend-Only Selectors (placeholder selectors)
+// Placeholder selectors look like class and id selectors, except the # or . is replaced by %
+
+// ------------------------------------------------------------------------------------------
+// USAGE:
+//
+// .mobile-nav__item {
+//     margin: 1rem 0;
+//
+//     a {
+//         @extend %nav-links;
+//         font-size: 1.5rem;
+//     }
+//
+//     &--cta a {
+//         @extend %nav-links--cta;
+//
+//         &:hover,
+//         &:active {
+//             @extend %nav-links-hover--cta;
+//         }
+//     }
+// }
+//
+// NOTE: @extend works by inserting the extending selector (e.g. '& a', '&--cta a',
+//       '&--cta a:hover') anywhere in the stylesheet that the extended selector
+//       (.e.g %nav-links, %nav-links--cta, %nav-links-hover--cta) appears. This will
+//       affect the source code order, because the placeholder selectors have to be included
+//       somewhere in main.scss!!!!!!
+//
+//         A { @extend B; }  <=> A { @write_this_selector_everywhere_you_find B; }
+// ------------------------------------------------------------------------------------------
+
+%nav-links {
+    color: $color-brand-much-darker;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: .2rem;
+}
+
+%nav-links--cta {
+    color: $color-white;
+    background: $color-red;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+}
+
+%nav-links-hover--cta {
+    color: $color-red;
+    background: $color-white;
+    border: none;
+}

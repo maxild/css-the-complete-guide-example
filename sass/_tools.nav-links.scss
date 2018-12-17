@@ -1,0 +1,25 @@
+/* -------------------------------------------
+          _tools.nav-links.scss
+---------------------------------------------*/
+
+@mixin nav-links {
+    color: $color-brand-much-darker;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: .2rem;
+}
+
+@mixin nav-links--cta {
+    color: $color-white;
+    background: $color-red;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+}
+
+@mixin nav-links-hover--cta {
+    color: $color-red;
+    background: $color-white;
+    border: none;
+}
+
+

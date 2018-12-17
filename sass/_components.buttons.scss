@@ -1,5 +1,5 @@
 /* -------------------------------------------
-          button module/component (BEM)
+          _components.buttons.scss
 ---------------------------------------------*/
 
 .button {
@@ -23,3 +23,28 @@
 .button:focus {
     outline: none;
 }
+
+
+
+.toggle-button {
+  width: $main-header-hamburger-width;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+

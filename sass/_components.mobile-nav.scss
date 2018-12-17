@@ -1,0 +1,42 @@
+/* -------------------------------------------
+          _components.mobile-nav.scss
+---------------------------------------------*/
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  z-index: $z-index-mobile-nav;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh; // 'vh' unit => no need for 100% height ancestor-chain trick
+}
+
+.mobile-nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  margin: 10% auto;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-nav__item {
+    margin: 1rem 0;
+
+    a {
+        @include nav-links;
+        font-size: 1.5rem;
+    }
+
+    &--cta a {
+        @include nav-links--cta;
+
+        &:hover,
+        &:active {
+            @include nav-links-hover--cta;
+        }
+    }
+}
+
