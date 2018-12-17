@@ -1,43 +1,55 @@
-// on page load pseudo handler
 (function() {
-    // page singleton elements
-    let backdrop = document.querySelector(".backdrop");
-    let modal = document.querySelector(".modal");
+    let b = document.querySelector(".backdrop");
 
-    // console.log(backdrop);
-    // console.dir(backdrop);
+    // mobile-nav (can only be closed by clicking backdrop...not good)s
+    var closeMobileNav = (function(backdrop) {
+        let hamburgerButton = document.querySelector(".toggle-button");
+        let mobileNav = document.querySelector(".mobile-nav");
 
-    let choosePlanButtons = document.querySelectorAll(".plan button");
-
-    let hamburgerButton = document.querySelector(".toggle-button");
-    let mobileNav = document.querySelector(".mobile-nav");
-
-    for (let i = 0; i < choosePlanButtons.length; i++) {
-        // arrow function does not work in IE
-        choosePlanButtons[i].addEventListener("click", () => {
-            modal.style.display = "block";
-            backdrop.style.display = "block";
+        hamburgerButton.addEventListener("click", () => {
+            mobileNav.classList.add("is-open");
+            backdrop.classList.add("is-open");
         });
-    }
 
-    let modalNoButton = document.querySelector(
-        ".modal__actions > .modal__action--negative"
-    );
+        let closeNav = function() {
+            mobileNav.classList.remove("is-open");
+            backdrop.classList.remove("is-open");
+        };
 
-    // const requires IE11
-    const closeModal = function() {
-        // spaghetti code...we just hide every modal and the backdrop
-        modal.style.display = "none";
-        backdrop.style.display = "none";
-        mobileNav.style.display = "none";
-    };
+        return closeNav;
+    })(b);
 
-    modalNoButton.addEventListener("click", closeModal);
+    // modal (is only present on main page)
+    let closeModal = (function(backdrop) {
+        let choosePlanButtons = document.querySelectorAll(".plan button");
+        let modal = document.querySelector(".modal");
+        let modalNoButton = document.querySelector(
+            ".modal__actions > .modal__action--negative"
+        );
 
-    backdrop.addEventListener("click", closeModal);
+        for (let i = 0; i < choosePlanButtons.length; i++) {
+            choosePlanButtons[i].addEventListener("click", () => {
+                modal.classList.add("is-open");
+                backdrop.classList.add("is-open");
+            });
+        }
 
-    hamburgerButton.addEventListener("click", function() {
-        mobileNav.style.display = "block";
-        backdrop.style.display = "block";
+        let closeModal = function() {
+            if (modal) {
+                modal.classList.remove("is-open");
+            }
+            backdrop.classList.remove("is-open");
+        };
+
+        if (modalNoButton) {
+            modalNoButton.addEventListener("click", closeModal);
+        }
+
+        return closeModal;
+    })(b);
+
+    b.addEventListener("click", () => {
+        closeMobileNav();
+        closeModal();
     });
 })();
