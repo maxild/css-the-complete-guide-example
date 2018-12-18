@@ -9,12 +9,17 @@
 }
 
 .plans__list {
-    width: 80%;
-    // NOTE: This auto-centering only works for block-level elements with a defined width
-    margin: auto;   // [1] centrer selve .plans__list elementet
-    // The following is equivalent to [1]
-    //margin: 0 auto;     //
-    text-align: center; // centrer .plan elementerne (de er inline-block)
+    // We don't need .plans__list in our mobile design
+    //width: 100%;
+
+    @include respond_to('non-mobile') {
+        width: 100%;
+        // NOTE: This auto-centering only works for block-level elements with a defined width
+        //margin: auto;   // [1] center horizontally
+        // The following is equivalent to [1]
+        //margin: 0 auto;\
+        text-align: center; // center (inline-block) .plan elements
+    }
 }
 
 /* -------------------------------------------
@@ -24,78 +29,71 @@
 .plan {
     background: $color-brand-light;
     text-align: center;
-    padding: 16px;
-    margin: 8px;
-    display: inline-block;
-    width: 30%;
-    vertical-align: middle;
+    padding: 1rem;
+    margin: .5rem 0;
+    width: 100%;
+
+    @include respond_to('non-mobile') {
+        display: inline-block;
+        width: 30%;
+        vertical-align: middle;
+        min-width: 12.5rem; // 200px
+        max-width: 25rem; // 400px
+    }
+
+    &__title {
+        color: $color-brand-much-darker;
+
+        // .plan--highlighted & {
+        //     color: $color-white;
+        // }
+    }
+
+    &__price {
+        color: $color-gray-light;
+
+        // .plan--highlighted & {
+        //     color: $color-brand-much-darker;
+        // }
+    }
+
+    &__annotation {
+        color: $color-brand-dark;
+        background: $color-white;
+        padding: 8px;
+        box-shadow: 2px 2px 2px 2px $color-shadow;
+        border-radius: $base-radius;
+    }
+
+    &__features {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__feature {
+        margin: 8px 0;
+    }
 }
 
-.plan__title {
-    color: $color-brand-much-darker;
-}
-
-.plan__price {
-    color: $color-gray-light;
-}
-
-/* multiple classes architecture => specificity higher */
+// We define alle variation overrides in one place
 .plan--highlighted {
     background: $color-brand-dark;
     color: $color-white;
-    box-shadow: 2px 2px 2px 2px $color-shadow;
-}
 
-/* multiple classes architecture => specificity higher */
-.plan--highlighted .plan__title {
-    color: $color-white;
-}
+    @include respond_to('non-mobile') {
+        box-shadow: 2px 2px 2px 2px $color-shadow;
+    }
 
-/* multiple classes architecture => specificity higher */
-.plan--highlighted .plan__price {
-    color: $color-brand-much-darker;
-}
+    // The below is one of a few occasions where we’d use a descendant
+    // selector to modify an Element based on a Modifier on the Block.
+    & .plan__title {
+        color: $color-white;
+    }
 
-/*
-The above is one of a few occasions where we’d use a descendant
-selector to modify an Element based on a Modifier on the Block.
-
-If using Sass, we would likely write this like so:
-
-.plan { }
-
-  .plan__title {
-
-    .plan--highlighted & { } // [2]
-
-  }
-
-.plan--highlighted { } // [1]
-
-Note that we do not nest a new instance of .plan__title {} inside
-of .plan--highlighted {} [1]. instead, we make use of Sass’ parent selectors
-to prepend .plan--highlighted onto the existing .plan__title {} selector [2].
-This means that all of our .plan__highlighted {}-related rules exist in
-one place, and aren’t spread throughout the file.
-
-This is general good practice when dealing with nested code: keep all of
-your context (e.g. all .plan__highlighted {} code) encapsulated in one location.
-*/
-
-.plan__annotation {
-    color: $color-brand-dark;
-    background: $color-white;
-    padding: 8px;
-    box-shadow: 2px 2px 2px 2px $color-shadow;
-    border-radius: $base-radius;
-}
-
-.plan__features {
-    list-style: none;
-    margin: 0;
-    reset: 0;
-}
-
-.plan__feature {
-    margin: 8px 0;
+    // The below is one of a few occasions where we’d use a descendant
+    // selector to modify an Element based on a Modifier on the Block.
+    & .plan__price {
+        color: $color-brand-much-darker;
+    }
 }

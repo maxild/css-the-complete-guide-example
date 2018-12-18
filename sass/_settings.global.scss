@@ -1,11 +1,24 @@
-$main-header-height: 4rem;
-$main-header-padding-height: .5rem;
-$main-header-content-height: $main-header-height - 2 * $main-header-padding-height;
+$main-header-height: 2.5rem;
+$non-mobile-main-header-height: 3.5rem;
+
+// TODO: Padding stoerre end .3 rem goer .main-nav teksten
+$main-header-padding-height: .2rem;
+$non-mobile-main-header-padding-height: .3rem;
 
 // This is the length required to render the alt text of the logo image
 // This langth actually ruins the main-nav component for small screen widths
-$main-header-hamburger-width: 3rem;
-$main-header-logo-width: 4rem;
+$main-header-hamburger-width: 2.4rem;
+$non-mobile-main-header-hamburger-width: 3rem;
+
+$main-header-logo-width: 3rem;
+$non-mobile-main-header-logo-width: 4rem;
+
+$main-header-content-height: $main-header-height - 2 * $main-header-padding-height;
+$non-mobile-main-header-content-height: $non-mobile-main-header-height - 2 * $non-mobile-main-header-padding-height;
+
+
+
+
 
 $z-index-modal:    200;
 $z-index-backdrop: 100;

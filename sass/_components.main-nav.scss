@@ -8,8 +8,14 @@
     display: inline-block;
     vertical-align: middle;
     text-align: right; // PROBLEM: nav is inline-block and therefore the width is determined by its content
-    width: calc(100% - #{$main-header-hamburger-width + $main-header-logo-width + 1rem}); // PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements
-    font-size: 1.2rem;
+
+    // PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements
+    width: calc(100% - #{$main-header-hamburger-width + $main-header-logo-width + 1rem});
+
+    @include respond_to('non-mobile') {
+        font-size: 1.2rem;
+        width: calc(100% - #{$non-mobile-main-header-hamburger-width + $non-mobile-main-header-logo-width + 1rem});
+    }
 }
 
 /*ul*/.main-nav__items {

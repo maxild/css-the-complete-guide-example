@@ -7,6 +7,11 @@
     width: 90%;
     // margin-top is 2rem to the main-nav
     margin: calc(2rem + #{$main-header-height}) auto 0 auto; // center
+
+    @include respond_to('non-mobile') {
+        // margin-top is 2rem to the main-nav
+        margin: calc(2rem + #{$non-mobile-main-header-height}) auto 0 auto; // center
+    }
 }
 
 // Component: box of two inner boxes
