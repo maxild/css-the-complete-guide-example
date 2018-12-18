@@ -15,15 +15,21 @@
     // 3. shorthand notation will overwrite all sub properties, because
     //    non specified values will get default values
     background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-                url("../img/freedom.jpg") 10% 30%/cover no-repeat border-box, // [1]
+                url("../img/freedom.jpg") center/cover no-repeat border-box, // [1]
                 $color-brand-light;
 
     //bg properties, assigned to each stacked layer above [1], and separeted by commas
 
     // background-image: url("../img/freedom.jpg");
 
-    // left ==  0% horizontally
-    // bottom == 100% vertically
+    // One keyword/value => The other dimension/value is 50% (center)
+    //   center == center center = 50% 50%
+    //   left ==  0% 50%
+    //   right == 100% 50%
+    //   top == 50% 0%
+    //   bottom == 50% 100%
+    // Two values => one value defines X and the other defines Y
+    //
 
     // A four-value syntax alternates between keywords and length or percentage units.
     // You can use any of the keyword values except center.
@@ -46,14 +52,9 @@
     //border: 5px dashed red;
     //padding: 10px;
 
-    @include respond-to('medium') {
+    @include respond-to('non-mobile') {
         height: 40vh;
-        background-position: 50% 25%;
-    }
-
-    @include respond-to('large') {
-        height: 50vh;
-        background-position: 50% 25%; // redundant
+        background-position: center 25%; // see more of the top of the image on bigger devices
     }
 
     &__title {
@@ -67,13 +68,10 @@
         margin: 0; // reset h1 user-agent margin
         font-size: 1.6rem;
 
-        @include respond-to('medium') {
+        @include respond-to('non-mobile') {
             font-size: 3rem;
         }
 
-        @include respond-to('large') {
-            font-size: 5rem;
-        }
     }
 
 }

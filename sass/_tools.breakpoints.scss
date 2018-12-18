@@ -1,3 +1,5 @@
+// Credits: https://www.sitepoint.com/managing-responsive-breakpoints-sass/
+
 /// Responsive breakpoint manager
 /// @access public
 /// @param {String} $breakpoint - Breakpoint
@@ -23,4 +25,22 @@
     }
 }
 
-// TODO:  Use Sass-MQ, Breakpoint or include-media instead.
+// If you use a 'mobile-first' (mf-*) approach, this version should suit you quite well
+// since you won’t need anything else than min-width media queries.
+@mixin mf-respond-to($breakpoint) {
+    // $mf-breakpoints defined in _settings.globals.scss
+    $value: map-get($mf-breakpoints, $breakpoint);
+
+    @if $value != null {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @error 'No value found for `#{$breakpoint}`. '
+                + 'Please make sure it is defined in `$mf-breakpoints` map.';
+    }
+}
+
+// TODO:  Use Sass-MQ, Breakpoint or include-media instead. See also
+// https://css-tricks.com/approaches-media-queries-sass/.
