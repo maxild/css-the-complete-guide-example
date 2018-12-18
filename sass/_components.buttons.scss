@@ -35,7 +35,7 @@
   padding-bottom: 0;
   vertical-align: middle;
 
-  @include respond_to('non-mobile') {
+  @include respond-to('non-mobile') {
       width: $non-mobile-main-header-hamburger-width;
   }
 }
@@ -51,7 +51,7 @@
   height: 0.1rem;
   margin: 0.4rem 0;
 
-  @include respond_to('non-mobile') {
+  @include respond-to('non-mobile') {
     height: 0.2rem;
     margin: 0.6rem 0;
   }

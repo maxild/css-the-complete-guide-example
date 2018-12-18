@@ -21,16 +21,15 @@
 }
 
 // media query to horizontally align all 3 key-features on desktop devices
-@include respond_to('non-mobile') {
+@include respond-to('non-mobile') {
     .key-features__items {
         text-align: center; /* works because li elements are turned into inline-block */
     }
 
     .key-features__item {
-        display: inline-block;
+        @include ib($valign: top);
         width: 30%;
         max-width: $plan-max-width;
-        vertical-align: top;
     }
 }
 

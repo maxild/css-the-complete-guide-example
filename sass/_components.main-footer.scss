@@ -3,7 +3,6 @@
 ---------------------------------------------*/
 
 .main-footer {
-
     background-color: black;
     padding: 1rem;
     margin-top: 1.6rem;
@@ -16,8 +15,12 @@
     }
 
     &__link {
-        display: inline-block;
-        margin: 0 1rem;
+        margin: 1rem 0;
+
+        @include respond-to('non-mobile') {
+            display: inline-block;
+            margin: 0 1rem;
+        }
 
         // specificity (0,1,1) here
         & > a {
@@ -30,5 +33,4 @@
             }
         }
     }
-
 }

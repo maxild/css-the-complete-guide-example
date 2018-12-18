@@ -52,10 +52,10 @@
     //border: 5px dashed red;
     //padding: 10px;
 
-    @include respond-to('non-mobile') {
-        height: 40vh;
-        background-position: center 25%; // see more of the top of the image on bigger devices
-    }
+    // @include respond-to('non-mobile') {
+    //     height: 40vh;
+    //     background-position: center 25%; // see more of the top of the image on bigger devices
+    // }
 
     &__title {
         color: $color-white;
@@ -68,13 +68,32 @@
         margin: 0; // reset h1 user-agent margin
         font-size: 1.6rem;
 
-        @include respond-to('non-mobile') {
-            font-size: 3rem;
-        }
+        // @include respond-to('non-mobile') {
+        //     font-size: 3rem;
+        // }
 
     }
 
 }
+
+//@include respond-to('non-mobile-and-portrait') {
+//@include respond-to('non-mobile-min-height') {
+@include respond-to('non-mobile') {
+
+    // NOTE: cannot use '&__' to nest element in block
+
+    .product-overview {
+        height: 40vh;
+        background-position: 50% 25%; // see more of the top of the image on bigger devices
+        background-size: cover;
+    }
+
+    .product-overview__title {
+        font-size: 3rem;
+    }
+}
+
+
 
 // Mobile-first design: Start with getting things look good for small devices, and
 // overwrite for larger devices

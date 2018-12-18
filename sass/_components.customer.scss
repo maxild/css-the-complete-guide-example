@@ -8,7 +8,7 @@
     // margin-top is 2rem to the main-nav
     margin: calc(2rem + #{$main-header-height}) auto 0 auto; // center
 
-    @include respond_to('non-mobile') {
+    @include respond-to('non-mobile') {
         // margin-top is 2rem to the main-nav
         margin: calc(2rem + #{$non-mobile-main-header-height}) auto 0 auto; // center
     }
@@ -23,8 +23,7 @@
     &__image-container {
         width: 65%;
         max-width: 580px;
-        display: inline-block;
-        vertical-align: middle;
+        @include ib();
         box-shadow: 3px 3px 5px 3px $color-shadow-light;
     }
 
@@ -38,8 +37,7 @@
     &__info {
         padding: .9rem;
         width: 30%;
-        display: inline-block;
-        vertical-align: middle;
+        @include ib();
         text-align: right;
     }
         &__name {

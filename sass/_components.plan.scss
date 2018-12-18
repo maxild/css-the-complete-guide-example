@@ -12,14 +12,14 @@
     // We don't need .plans__list in our mobile design
     //width: 100%;
 
-    @include respond_to('non-mobile') {
-        width: 100%;
-        // NOTE: This auto-centering only works for block-level elements with a defined width
-        //margin: auto;   // [1] center horizontally
-        // The following is equivalent to [1]
-        //margin: 0 auto;\
-        text-align: center; // center (inline-block) .plan elements
-    }
+    // @include respond-to('non-mobile') {
+    //     width: 100%;
+    //     // NOTE: This auto-centering only works for block-level elements with a defined width
+    //     //margin: auto;   // [1] center horizontally
+    //     // The following is equivalent to [1]
+    //     //margin: 0 auto;\
+    //     text-align: center; // center (inline-block) .plan elements
+    // }
 }
 
 /* -------------------------------------------
@@ -33,13 +33,12 @@
     margin: .5rem 0;
     width: 100%;
 
-    @include respond_to('non-mobile') {
-        display: inline-block;
-        width: 30%;
-        vertical-align: middle;
-        min-width: 12.5rem; // 200px
-        max-width: 25rem; // 400px
-    }
+    // @include respond-to('non-mobile') {
+    //     @include ib();
+    //     width: 30%;
+    //     min-width: 12.5rem; // 200px
+    //     max-width: $plan-max-width; // 400px
+    // }
 
     &__title {
         color: $color-brand-much-darker;
@@ -81,7 +80,7 @@
     background: $color-brand-dark;
     color: $color-white;
 
-    @include respond_to('non-mobile') {
+    @include respond-to('non-mobile') {
         box-shadow: 2px 2px 2px 2px $color-shadow;
     }
 
@@ -97,3 +96,29 @@
         color: $color-brand-much-darker;
     }
 }
+
+//@include respond-to('non-mobile-and-landscape') {
+//@include respond-to('non-mobile-or-landscape') {
+@include respond-to('non-mobile') {
+
+    .plans__list {
+        width: 100%;
+        // NOTE: This auto-centering only works for block-level elements with a defined width
+        //margin: auto;   // [1] center horizontally
+        // The following is equivalent to [1]
+        //margin: 0 auto;\
+        text-align: center; // center (inline-block) .plan elements
+    }
+
+    .plan {
+        @include ib();
+        width: 30%;
+        min-width: 12.5rem; // 200px
+        max-width: $plan-max-width; // 400px
+    }
+
+    .plan--highlighted {
+        box-shadow: 2px 2px 2px 2px $color-shadow;
+    }
+}
+

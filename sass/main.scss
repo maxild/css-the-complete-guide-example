@@ -5,6 +5,7 @@
 @import "tools.clearfix";
 @import "tools.background-image";
 @import "tools.nav-links";
+@import "tools.mixins";
 
 // Here we start using tag/type selectors
 
@@ -41,6 +42,7 @@
 @import "utilities.clearfix";
 
 @import "trumps.states";
+@import "trumps.helpers";
 
 /* -------------------------------------------
               BEM explained
