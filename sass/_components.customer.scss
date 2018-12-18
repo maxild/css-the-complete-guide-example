@@ -5,25 +5,23 @@
 // Some hacky layout
 .testimonial-container {
     width: 90%;
-    // margin-top is 2rem to the main-nav
-    margin: calc(2rem + #{$main-header-height}) auto 0 auto; // center
+    // margin-top is 3rem to the main-nav
+    margin: calc(3rem + #{$main-header-height}) auto 0 auto; // center
 
     @include respond-to('non-mobile') {
-        // margin-top is 2rem to the main-nav
-        margin: calc(2rem + #{$non-mobile-main-header-height}) auto 0 auto; // center
+        // margin-top is 3rem to the main-nav
+        margin: calc(3rem + #{$non-mobile-main-header-height}) auto 0 auto; // center
     }
 }
 
 // Component: box of two inner boxes
 .testimonial {
     font-size: 1.2rem; // TODO: This is really not needed because all text is sized in rem's below
-    margin: 3rem 0;
 
     // image-box
     &__image-container {
-        width: 65%;
-        max-width: 580px;
-        @include ib();
+        width: 100%;
+        max-width: $screen-medium-width;
         box-shadow: 3px 3px 5px 3px $color-shadow-light;
     }
 
@@ -36,8 +34,6 @@
     // text-box
     &__info {
         padding: .9rem;
-        width: 30%;
-        @include ib();
         text-align: right;
     }
         &__name {
@@ -66,6 +62,24 @@
             font-size: 1.2rem;
             margin: .2rem;
         }
+}
+
+@include respond-to('non-mobile') {
+
+    .testimonial {
+        margin: 3rem auto;
+        max-width: $screen-huge-width;
+    }
+
+    .testimonial__image-container {
+        @include ib();
+        width: 66%;
+    }
+
+    .testimonial__info {
+        @include ib();
+        width: 30%;
+    }
 }
 
 // TODO: Source order in html decides on reverse

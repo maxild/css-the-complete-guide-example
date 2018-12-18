@@ -14,7 +14,6 @@
 
 .packages {
     padding: 0;
-    margin: 0;
     @include below-main-header();
     @include clearfix;
 }
@@ -29,6 +28,7 @@
     border-left: none;
     margin: 1rem 0;
     width: 80%;
+    max-width: 60rem;
     z-index: 0;
 
     // because the link is the entire box
@@ -96,4 +96,18 @@
 .package--premium {
     float: left;
     background-color: rgba($color-brand-much-darker, 0.95);
+}
+
+// borders on all sides for huge devices
+@include respond_to('huge') {
+    .packages {
+        margin: 4rem auto;
+        max-width: $screen-huge-width;
+    }
+    .package {
+        border-left: 4px solid $color-brand-much-darker;
+    }
+    .package--free {
+        border-right: 4px solid $color-brand-much-darker;
+    }
 }
