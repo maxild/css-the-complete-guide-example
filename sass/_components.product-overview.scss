@@ -15,13 +15,28 @@
     // 3. shorthand notation will overwrite all sub properties, because
     //    non specified values will get default values
     background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-                url("../img/freedom.jpg") left 10% bottom 70%/cover no-repeat border-box, // [1]
+                url("../img/freedom.jpg") 10% 30%/cover no-repeat border-box, // [1]
                 $color-brand-light;
 
     //bg properties, assigned to each stacked layer above [1], and separeted by commas
 
     // background-image: url("../img/freedom.jpg");
-    // background-position: left 10% bottom 20%;
+
+    // left ==  0% horizontally
+    // bottom == 100% vertically
+
+    // A four-value syntax alternates between keywords and length or percentage units.
+    // You can use any of the keyword values except center.
+    // This positions the background image 10% from the left and 20% from the bottom of
+    // the container. moving a background image by X% means it will align the X% point
+    // in the image to the X% point in the container.
+    //    background-position: left 10% bottom 70%; // [2]
+
+    // When you declare two values, the first value is the horizontal offset
+    // and the second value is the vertical offset. moving a background image
+    // by X% means it will align the X% point in the image to the X% point in the container.
+    //    background-position: 10% 30%;   // This is the same as [2]
+
     // background-size: cover;
     // background-repeat: no-repeat;
     // background-origin: padding-box; // because size is 'cover' top and bottom should be clipped
@@ -30,16 +45,59 @@
     // TODO: only illustrates the difference between content-box vs padding-box in background-origin/background-clip
     //border: 5px dashed red;
     //padding: 10px;
+
+    @include respond-to('medium') {
+        height: 40vh;
+        background-position: 50% 25%;
+    }
+
+    @include respond-to('large') {
+        height: 50vh;
+        background-position: 50% 25%; // redundant
+    }
+
+    &__title {
+        color: $color-white;
+        font-family: 'Anton', sans-serif;
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        width: 100%;
+        padding: 0;
+        margin: 0; // reset h1 user-agent margin
+        font-size: 1.6rem;
+
+        @include respond-to('medium') {
+            font-size: 3rem;
+        }
+
+        @include respond-to('large') {
+            font-size: 5rem;
+        }
+    }
+
 }
 
-.product-overview__title {
-    color: $color-white;
-    font-family: 'Anton', sans-serif;
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-    width: 100%;
-    padding: 0;
-    margin: 0; // reset h1 user-agent margin
-}
+// Mobile-first design: Start with getting things look good for small devices, and
+// overwrite for larger devices
 
+// @media (min-width: 40rem) {
+//     .product-overview {
+//         height: 40vh;
+//         background-position: 50% 25%;
+//     }
+
+//     .product-overview__title {
+//         font-size: 3rem;
+//     }
+// }
+
+// @media (min-width: 60rem) {
+//     .product-overview {
+//         height: 50vh;
+//         background-position: 50% 25%;
+//     }
+//     .product-overview__title {
+//         font-size: 5rem;
+//     }
+// }

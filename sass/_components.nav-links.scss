@@ -45,7 +45,7 @@
     color: $color-white;
     background: $color-red;
     padding: .5rem 1rem;
-    border-radius: 8px;
+    border-radius: $base-radius;
 }
 
 %nav-links-hover--cta {

@@ -1,0 +1,38 @@
+/* -------------------------------------------
+          _objects.media.scss
+---------------------------------------------*/
+
+// Credits: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+//
+// .media {margin:10px;}
+// .media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
+// .media .img {float:left; margin-right: 10px;}
+// .media .img img{display:block;}
+// .media .imgExt{float:right; margin-left: 10px;}
+
+// Credits: Harry Roberts net magazine code
+
+.o-media {
+    display: table;
+    width: 100%;
+}
+
+    .o-media__img,
+    .o-media__body {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .o-media__img {
+        padding-right: $base-spacing-unit;
+
+        img {
+            display: block;
+            max-width: none;
+        }
+
+    }
+
+    .o-media__body {
+        width: 100%;
+    }

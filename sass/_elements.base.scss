@@ -2,6 +2,11 @@
           _elements.base.scss
 ---------------------------------------------*/
 
+html {
+    font-size: ($base-font-size / 16px) * 1em;
+    line-height: $base-line-height / $base-font-size;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }

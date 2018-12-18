@@ -2,7 +2,9 @@
           _components.main-nav.scss
 ---------------------------------------------*/
 
-.main-nav {
+// Using so-called quasi-qualified selectors to document which elements the selctors er for in the DOM
+
+/*nav*/.main-nav {
     display: inline-block;
     vertical-align: middle;
     text-align: right; // PROBLEM: nav is inline-block and therefore the width is determined by its content
@@ -10,14 +12,14 @@
     font-size: 1.2rem;
 }
 
-.main-nav__items {
+/*ul*/.main-nav__items {
     // Because we want to control width we have to reset (user agent )margins
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.main-nav__item {
+/*li*/.main-nav__item {
     display: inline-block;
     margin-left: 1rem; // IMPORTANT: margin is not part of width
 

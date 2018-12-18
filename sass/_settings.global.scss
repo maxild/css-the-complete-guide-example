@@ -11,3 +11,32 @@ $z-index-modal:    200;
 $z-index-backdrop: 100;
 $z-index-mobile-nav: 101;
 
+
+
+
+$base-font-size:    16px;
+$base-line-height:  24px;
+
+$base-radius:       8px;
+
+// TODO: Should be used for margin, padding in elements,components....investigate inuitcss
+$base-spacing-unit: $base-line-height;
+
+
+// NOTE: Nested maps
+// $breakpoints: (
+//   'medium': (min-width: 800px),
+//   'large': (min-width: 1000px),
+//   'huge': (min-width: 1200px),
+// );
+
+// NOTE: strings
+$breakpoints: (
+  'medium': '(min-width: 40rem)', // 640px
+  'large': '(min-width: 60rem)',  // 960px
+);
+
+// TODO: I like these bp-variables better
+$tablet-width: 768px;
+$desktop-width: 1024px;
+

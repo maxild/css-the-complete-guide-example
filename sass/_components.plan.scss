@@ -87,7 +87,7 @@ your context (e.g. all .plan__highlighted {} code) encapsulated in one location.
     background: $color-white;
     padding: 8px;
     box-shadow: 2px 2px 2px 2px $color-shadow;
-    border-radius: 8px;
+    border-radius: $base-radius;
 }
 
 .plan__features {
