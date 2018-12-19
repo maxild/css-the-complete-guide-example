@@ -10,7 +10,7 @@
     height: $main-header-height;
     padding: $main-header-padding 1rem;
     margin: 0;
-    z-index: 1; // nav-bar stays on top of both plans and bg-image
+    z-index: z('main-header');
     font-size: .9rem;
     background: $color-brand;
 }

@@ -54,10 +54,20 @@ $testimonial-info-max-width: ($testimonial-info-width / 100%) * $testimonial-max
 // z-index (positioning)
 //
 
-$z-index-modal:    200;
-$z-index-backdrop: 100;
-$z-index-mobile-nav: 101;
+// nav-bar stays on top of both plans and bg-image
 
+$Z_INDEXES: (
+  'modal': 200,
+  'backdrop': 100,
+  'mobile-nav': 101,
+  'badge': 10,
+  'main-header': 1,
+  'below': -1,
+);
+
+@function z($layer) {
+  @return map-get($Z_INDEXES, $layer);
+}
 
 //
 // RWD -- Media Queries (breakpoints)

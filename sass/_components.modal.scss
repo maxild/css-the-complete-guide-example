@@ -5,7 +5,7 @@
 .modal {
   position: fixed;
   display: none;
-  z-index: $z-index-modal;
+  z-index: z('modal');
   top: 20%;
   left: 30%;
   width: 40%;

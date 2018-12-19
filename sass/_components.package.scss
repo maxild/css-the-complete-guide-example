@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1; // image stays behind the plans
+    z-index: z('below'); // image stays behind the plans
 
     background: url("../img/plans-background.jpg") center/cover;
     filter: grayscale(100%); // IE doesn't support this (needs polyfill)
@@ -29,7 +29,6 @@
     margin: 1rem 0;
     width: 80%;
     max-width: 60rem;
-    z-index: 0;
 
     // because the link is the entire box
     &:hover,
@@ -54,7 +53,7 @@
         font-size: .8rem;
         color: $color-white;
         background-color: $color-red;
-        z-index: 10;
+        z-index: z('badge');
     }
 
     &__subtitle {

@@ -5,7 +5,7 @@
 .mobile-nav {
   display: none;
   position: fixed;
-  z-index: $z-index-mobile-nav;
+  z-index: z('mobile-nav');
   top: 0;
   left: 0;
   background: white;

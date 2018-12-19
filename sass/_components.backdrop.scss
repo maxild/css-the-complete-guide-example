@@ -14,7 +14,7 @@
     display: none;
     top: 0;
     left: 0;
-    z-index: $z-index-backdrop;
+    z-index: z('backdrop');
     width: 100vw;
     height: 100vh;
     // OBS: position: fixed => containing block is the viewport, so no real difference between % and vw/vh
