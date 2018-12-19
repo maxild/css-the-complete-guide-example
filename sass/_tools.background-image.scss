@@ -1,16 +1,13 @@
-@mixin below-main-header {
-    // main-header (logo + main-nav) is taking out of the flow with poition: fixed
-    margin-top: $main-header-height;
-    @include respond-to('non-mobile') {
-        margin-top: $non-mobile-main-header-height;
-    }
-}
+// @mixin below-main-header {
+//     // main-header (logo + main-nav) is taking out of the document flow with 'poition: fixed'
 
-@mixin background-image-container($height) {
-    width: 100vw;
-    height: $height;
-    @include below-main-header();
-}
+// }
+
+// @mixin background-image-container($height) {
+//     width: 100vw;
+//     height: $height;
+//     @include below-main-header();
+// }
 
 // -----------------------------------------------------------------------------------------------
 //    Definition: Containing Block (CB)

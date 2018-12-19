@@ -1,40 +1,62 @@
-$main-header-height: 2.5rem;
-$non-mobile-main-header-height: 3.5rem;
+//
+// Base px units
+//
 
-// TODO: Padding stoerre end .3 rem goer .main-nav teksten
-$main-header-padding-height: .2rem;
-$non-mobile-main-header-padding-height: .3rem;
+$base-radius:       8px;
+$base-font-size:    16px;
+$base-line-height:  24px;
+$base-spacing-unit: $base-line-height;
+
+$rem-spacing-unit: ($base-line-height / $base-font-size) * 1rem;
+
+//
+// main-header
+//
+
+$main-header-content-height: 2.5rem;
+$main-header-padding: 0.2rem;
+$main-header-height: $main-header-content-height + 2 * $main-header-padding;
 
 // This is the length required to render the alt text of the logo image
 // This langth actually ruins the main-nav component for small screen widths
 $main-header-hamburger-width: 2.4rem;
-$non-mobile-main-header-hamburger-width: 3rem;
-
 $main-header-logo-width: 3rem;
-$non-mobile-main-header-logo-width: 4rem;
 
-$main-header-content-height: $main-header-height - 2 * $main-header-padding-height;
-$non-mobile-main-header-content-height: $non-mobile-main-header-height - 2 * $non-mobile-main-header-padding-height;
+//
+// main-footer
+//
+
+$main-footer-top-margin: 1.6rem;
+$main-footer-padding: 1rem;
+$main-footer-height: 2 * $main-footer-padding + ($base-line-height / $base-font-size) * 1rem;
+
+//
+// plan
+//
+
 
 $plan-max-width: 25rem;
 
+//
+// Customers
+//
 
+$testimonial-max-width: 60rem;
+
+$testimonial-image-width: 66%;
+$testimonial-image-max-width: ($testimonial-image-width / 100%) * $testimonial-max-width;
+
+$testimonial-info-width: 30%;
+$testimonial-info-max-width: ($testimonial-info-width / 100%) * $testimonial-max-width;
+
+
+//
+// z-index (positioning)
+//
 
 $z-index-modal:    200;
 $z-index-backdrop: 100;
 $z-index-mobile-nav: 101;
-
-
-
-
-$base-font-size:    16px;
-$base-line-height:  24px;
-
-$base-radius:       8px;
-
-// TODO: Should be used for margin, padding in elements,components....investigate inuitcss
-$base-spacing-unit: $base-line-height;
-
 
 
 //
@@ -46,7 +68,7 @@ $base-spacing-unit: $base-line-height;
 //   $screen-large-width:  1024px;   // (~desktop)
 
 $screen-medium-width: 40rem;   // 640px (~tablet)
-$screen-medium-height: 60rem;
+$screen-medium-height: 40rem;
 $screen-large-width:  60rem;   // 960px (~desktop)
 $screen-huge-width: 1500px;
 

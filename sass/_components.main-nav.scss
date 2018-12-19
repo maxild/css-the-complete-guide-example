@@ -2,18 +2,25 @@
           _components.main-nav.scss
 ---------------------------------------------*/
 
+main {
+    // position main below main-header
+    margin-top: $main-header-height;
+    // position footer at the botoom of the viewport (if main contents is not sufficient to position it below)
+    min-height: calc(100vh - #{$main-header-height + $main-footer-height + $main-footer-top-margin});
+}
+
 // Using so-called quasi-qualified selectors to document which elements the selctors er for in the DOM
 
 /*nav*/.main-nav {
     display: none;
-    //width: calc(100% - #{$main-header-hamburger-width + $main-header-logo-width + 1rem});
 
+    // Only display nav in desktop viewport
     @include respond-to('non-mobile') {
         @include ib();
         text-align: right; // PROBLEM: nav is inline-block and therefore the width is determined by its content
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         // PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements
-        width: calc(100% - #{$non-mobile-main-header-hamburger-width + $non-mobile-main-header-logo-width + 1rem});
+        width: calc(100% - #{$main-header-hamburger-width + $main-header-logo-width + 1rem});
     }
 }
 

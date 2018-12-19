@@ -2,20 +2,20 @@
           _components.package.scss
 ---------------------------------------------*/
 
-.packages-overview {
-    background: url("../img/plans-background.jpg") center/cover;
-    filter: grayscale(100%); // IE doesn't support this (needs polyfill)
-    @include background-image-container($height: 100vh);
+.background {
+    @include size(100vw, 100vh);
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1; // image stays behind the plans
+
+    background: url("../img/plans-background.jpg") center/cover;
+    filter: grayscale(100%); // IE doesn't support this (needs polyfill)
 }
 
 .packages {
-    padding: 0;
-    @include below-main-header();
     @include clearfix;
+    padding: 0;
 }
 
 /* -------------------------------------------
@@ -98,10 +98,10 @@
     background-color: rgba($color-brand-much-darker, 0.95);
 }
 
-// borders on all sides for huge devices
+// borders on all sides for huge devices and center the boxes
 @include respond_to('huge') {
     .packages {
-        margin: 4rem auto;
+        margin: auto;
         max-width: $screen-huge-width;
     }
     .package {

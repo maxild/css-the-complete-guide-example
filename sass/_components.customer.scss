@@ -2,17 +2,15 @@
           _components.customer.scss
 ---------------------------------------------*/
 
-// Some hacky layout
 .testimonial-container {
-    width: 90%;
-    // margin-top is 3rem to the main-nav
-    margin: calc(3rem + #{$main-header-height}) auto 0 auto; // center
-
-    @include respond-to('non-mobile') {
-        // margin-top is 3rem to the main-nav
-        margin: calc(3rem + #{$non-mobile-main-header-height}) auto 0 auto; // center
-    }
+    padding: $rem-spacing-unit;
 }
+
+// Some hacky layout
+// .testimonial-container {
+//     width: 80%;
+//     margin: auto;
+// }
 
 // Component: box of two inner boxes
 .testimonial {
@@ -21,7 +19,7 @@
     // image-box
     &__image-container {
         width: 100%;
-        max-width: $screen-medium-width;
+        max-width: $testimonial-image-max-width;
         box-shadow: 3px 3px 5px 3px $color-shadow-light;
     }
 
@@ -35,6 +33,7 @@
     &__info {
         padding: .9rem;
         text-align: right;
+        //max-width: $testimonial-info-max-width;
     }
         &__name {
             font-size: 2rem;
@@ -66,6 +65,14 @@
 
 @include respond-to('non-mobile') {
 
+    // .testimonial-container {
+    //     width: $testimonial-max-width + 10rem;
+    //     // margin-top is 3rem to the main-nav
+    //     // margin: calc(3rem + #{$main-header-height}) auto 0 auto; // center
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+
     .testimonial {
         margin: 3rem auto;
         max-width: $screen-huge-width;
@@ -73,12 +80,12 @@
 
     .testimonial__image-container {
         @include ib();
-        width: 66%;
+        width: $testimonial-image-width;
     }
 
     .testimonial__info {
         @include ib();
-        width: 30%;
+        width: $testimonial-info-width;;
     }
 }
 

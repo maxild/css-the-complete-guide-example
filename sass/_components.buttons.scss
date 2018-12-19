@@ -24,7 +24,12 @@
     outline: none;
 }
 
-
+/* -------------------------------------------
+   .toggle-button (hamburger) is only displayed
+   in the mobile viewport. This behaviour is
+   not part of the button class, but styled
+   through a container element
+---------------------------------------------*/
 
 .toggle-button {
   width: $main-header-hamburger-width;
@@ -34,10 +39,6 @@
   padding-top: 0;
   padding-bottom: 0;
   vertical-align: middle;
-
-  @include respond-to('non-mobile') {
-      width: $non-mobile-main-header-hamburger-width;
-  }
 }
 
 .toggle-button:focus {
@@ -50,10 +51,5 @@
   display: block;
   height: 0.1rem;
   margin: 0.4rem 0;
-
-  @include respond-to('non-mobile') {
-    height: 0.2rem;
-    margin: 0.6rem 0;
-  }
 }
 

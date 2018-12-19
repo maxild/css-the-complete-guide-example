@@ -6,19 +6,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: $main-header-height;
     width: 100%;
-    background: $color-brand;
-    padding: $main-header-padding-height 1rem;
+    height: $main-header-height;
+    padding: $main-header-padding 1rem;
     margin: 0;
     z-index: 1; // nav-bar stays on top of both plans and bg-image
     font-size: .9rem;
-
-    @include respond-to('non-mobile') {
-        height: $non-mobile-main-header-height;
-        padding: $non-mobile-main-header-padding-height 1rem;
-        font-size: 1rem;
-    }
+    background: $color-brand;
 }
 
 .main-header__hamburger {
@@ -44,13 +38,6 @@
 
     width: $main-header-logo-width;
     height: $main-header-content-height;
-
-
-    @include respond-to('non-mobile') {
-        width: $non-mobile-main-header-logo-width;
-        height: $non-mobile-main-header-content-height;
-        font-size: 1.4rem;
-    }
 
     img {
         height: 100%;

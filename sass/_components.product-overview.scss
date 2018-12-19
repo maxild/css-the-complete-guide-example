@@ -5,7 +5,7 @@
 .product-overview {
     // NOTE: vh/vw units require IE11 or modern browsers!!!!
     // using %-units is better when containing block is the viewport
-    @include background-image-container($height: 33vh);
+    @include size(100vw, 33vh);
 
     // Create positioning context
     position: relative;

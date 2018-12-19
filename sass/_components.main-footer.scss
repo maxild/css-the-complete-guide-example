@@ -4,8 +4,8 @@
 
 .main-footer {
     background-color: black;
-    padding: 1rem;
-    margin-top: 1.6rem;
+    padding: $main-footer-padding;
+    margin-top: $main-footer-top-margin;
 
     &__links {
         list-style: none;
@@ -22,7 +22,7 @@
             margin: 0 1rem;
         }
 
-        // specificity (0,1,1) here
+        // specificity (0, 1, 1) here
         & > a {
             color: $color-white;
             text-decoration: none;
