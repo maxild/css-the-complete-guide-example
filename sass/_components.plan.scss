@@ -8,19 +8,19 @@
     text-align: center;
 }
 
-.plans__list {
-    // We don't need .plans__list in our mobile design
-    //width: 100%;
+// We don't need .plans__list in our mobile design
+// .plans__list {
+//     width: 100%;
 
-    // @include respond-to('non-mobile') {
-    //     width: 100%;
-    //     // NOTE: This auto-centering only works for block-level elements with a defined width
-    //     //margin: auto;   // [1] center horizontally
-    //     // The following is equivalent to [1]
-    //     //margin: 0 auto;\
-    //     text-align: center; // center (inline-block) .plan elements
-    // }
-}
+//     @include respond-to('non-mobile') {
+//         width: 100%;
+//         // NOTE: This auto-centering only works for block-level elements with a defined width
+//         //margin: auto;   // [1] center horizontally
+//         // The following is equivalent to [1]
+//         //margin: 0 auto;\
+//         text-align: center; // center (inline-block) .plan elements
+//     }
+// }
 
 /* -------------------------------------------
           plan module/component (BEM)
