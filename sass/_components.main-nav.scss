@@ -46,6 +46,15 @@ main {
 
     }
 
+    & a.is-selected {
+        color: $color-white;
+
+        &:hover,
+        &:active {
+            border-bottom: none;
+        }
+    }
+
     // call to action
     // same specificity as the rules for anchors inside normal main-nav__item so source code order matters
     &--cta a {
