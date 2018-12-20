@@ -3,68 +3,73 @@
 ---------------------------------------------*/
 
 main {
-    // position main below main-header
-    margin-top: $main-header-height;
-    // position footer at the botoom of the viewport (if main contents is not sufficient to position it below)
-    min-height: calc(100vh - #{$main-header-height + $main-footer-height + $main-footer-top-margin});
+  // position main below main-header
+  margin-top: $main-header-height;
+  // position footer at the botoom of the viewport (if main contents is not sufficient to position it below)
+  min-height: calc(100vh - #{$main-header-height + $main-footer-height +
+  $main-footer-top-margin});
 }
 
 // Using so-called quasi-qualified selectors to document which elements the selctors er for in the DOM
 
-/*nav*/.main-nav {
-    display: none;
+/*nav*/
+.main-nav {
+  display: none;
 
-    // Only display nav in desktop viewport
-    @include respond-to('non-mobile') {
-        @include ib();
-        text-align: right; // PROBLEM: nav is inline-block and therefore the width is determined by its content
-        font-size: 1.1rem;
-        // PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements
-        width: calc(100% - #{$main-header-hamburger-width + $main-header-logo-width + 1rem});
-    }
+  // Only display nav in desktop viewport
+  @include respond-to('non-mobile') {
+    @include ib();
+    font-size: 1.1rem;
+    text-align: right; // PROBLEM: nav is inline-block and therefore the width is determined by its content
+    // PROBLEM: inline-block element need more subtracted than width of div because of white-space between div and nav elements
+    width: calc(100% - #{$main-header-hamburger-width + $main-header-logo-width + 1rem});
+  }
 }
 
-/*ul*/.main-nav__items {
-    // Because we want to control width we have to reset (user agent )margins
-    margin: 0;
-    padding: 0;
-    list-style: none;
+/*ul*/
+.main-nav__items {
+  list-style: none;
+  // Because we want to control width we have to reset (user agent )margins
+  margin: 0;
+  padding: 0;
 }
 
-/*li*/.main-nav__item {
-    display: inline-block;
-    margin-left: 1rem; // IMPORTANT: margin is not part of width
+/*li*/
+.main-nav__item {
+  display: inline-block;
+  margin-left: 1rem; // IMPORTANT: margin is not part of width
 
-    & a {
-        @include nav-links;
 
-        &:hover,
-        &:active {
-            color: $color-white;
-            border-bottom: 5px solid $color-white;
-        }
+}
 
-    }
+.main-nav__item a {
+  @include nav-links;
 
-    & a.is-selected {
-        color: $color-white;
+  &:hover,
+  &:active {
+    border-bottom: 5px solid $color-white;
+    color: $color-white;
+  }
+}
 
-        &:hover,
-        &:active {
-            border-bottom: none;
-        }
-    }
+.main-nav__item .is-selected {
+  color: $color-white;
 
-    // call to action
-    // same specificity as the rules for anchors inside normal main-nav__item so source code order matters
-    &--cta a {
-        @include nav-links--cta;
+  &:hover,
+  &:active {
+    border-bottom-style: none;
+  }
+}
 
-        &:hover,
-        &:active {
-            @include nav-links-hover--cta;
-        }
-    }
+// call to action
+// same specificity as the rules for anchors inside normal main-nav__item so source code order matters
+.main-nav__item--cta a {
+  @include nav-links--cta;
+
+  &:hover,
+  &:active {
+    @include nav-links-hover--cta;
+  }
 }
 
 // // To style links appropriately, put the :hover rule after the :link and :visited rules
@@ -81,4 +86,3 @@ main {
 
 // // tabbing to a link with the keyboard
 // .main-nav__item a:focus {color: red;}
-

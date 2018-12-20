@@ -10,12 +10,11 @@
 }
 
 @mixin ib($valign: middle, $important: false) {
-    @if $important {
-        display: inline-block !important;
-        vertical-align: $valign !important;
-    }
-    @else {
-        display: inline-block;
-        vertical-align: $valign;
-    }
+  @if $important {
+    display: inline-block !important;
+    vertical-align: $valign !important;
+  } @else {
+    display: inline-block;
+    vertical-align: $valign;
+  }
 }

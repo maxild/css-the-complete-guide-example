@@ -3,40 +3,41 @@
 ---------------------------------------------*/
 
 .mobile-nav {
+  background: $color-white;
   display: none;
-  position: fixed;
-  z-index: z('mobile-nav');
-  top: 0;
-  left: 0;
-  background: white;
-  width: 80%;
   height: 100vh; // 'vh' unit => no need for 100% height ancestor-chain trick
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 80%;
+  z-index: z('mobile-nav');
 }
 
 .mobile-nav__items {
-  width: 90%;
   height: 100%;
   list-style: none;
   margin: 10% auto;
   padding: 0;
   text-align: center;
+  width: 90%;
 }
 
 .mobile-nav__item {
-    margin: 1rem 0;
+  margin: 1rem 0;
 
-    a {
-        @include nav-links;
-        font-size: 1.5rem;
-    }
 
-    &--cta a {
-        @include nav-links--cta;
-
-        &:hover,
-        &:active {
-            @include nav-links-hover--cta;
-        }
-    }
 }
 
+.mobile-nav__item a {
+  @include nav-links;
+  font-size: 1.5rem;
+}
+
+.mobile-nav__item--cta a {
+  @include nav-links--cta;
+
+  &:hover,
+  &:active {
+    @include nav-links-hover--cta;
+  }
+}

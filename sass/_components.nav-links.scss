@@ -35,21 +35,21 @@
 // ------------------------------------------------------------------------------------------
 
 %nav-links {
-    color: $color-brand-much-darker;
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: .2rem;
+  color: $color-brand-much-darker;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 0.2rem;
 }
 
 %nav-links--cta {
-    color: $color-white;
-    background: $color-red;
-    padding: .5rem 1rem;
-    border-radius: $base-radius;
+  color: $color-white;
+  background: $color-red;
+  padding: 0.5rem 1rem;
+  border-radius: $base-radius;
 }
 
 %nav-links-hover--cta {
-    color: $color-red;
-    background: $color-white;
-    border: none;
+  color: $color-red;
+  background: $color-white;
+  border-style: none;
 }

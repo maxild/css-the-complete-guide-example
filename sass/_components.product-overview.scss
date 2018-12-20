@@ -3,97 +3,92 @@
 ---------------------------------------------*/
 
 .product-overview {
-    // NOTE: vh/vw units require IE11 or modern browsers!!!!
-    // using %-units is better when containing block is the viewport
-    @include size(100vw, 33vh);
+  // NOTE: vh/vw units require IE11 or modern browsers!!!!
+  // using %-units is better when containing block is the viewport
+  @include size(100vw, 33vh);
 
-    // Create positioning context
-    position: relative;
+  // Create positioning context
+  position: relative;
 
-    // 1. stacking 2 bg-images and a solid color: transparent
-    // 2. background-position and background-size separated by '/'
-    // 3. shorthand notation will overwrite all sub properties, because
-    //    non specified values will get default values
-    background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-                url("../img/freedom.jpg") center/cover no-repeat border-box, // [1]
-                $color-brand-light;
+  // 1. stacking 2 bg-images and a solid color: transparent
+  // 2. background-position and background-size separated by '/'
+  // 3. shorthand notation will overwrite all sub properties, because
+  //    non specified values will get default values
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url('../img/freedom.jpg') center/cover no-repeat border-box,
+    $color-brand-light;
 
-    //bg properties, assigned to each stacked layer above [1], and separeted by commas
+  //bg properties, assigned to each stacked layer above [1], and separeted by commas
 
-    // background-image: url("../img/freedom.jpg");
+  // background-image: url("../img/freedom.jpg");
 
-    // One keyword/value => The other dimension/value is 50% (center)
-    //   center == center center = 50% 50%
-    //   left ==  0% 50%
-    //   right == 100% 50%
-    //   top == 50% 0%
-    //   bottom == 50% 100%
-    // Two values => one value defines X and the other defines Y
-    //
+  // One keyword/value => The other dimension/value is 50% (center)
+  //   center == center center = 50% 50%
+  //   left ==  0% 50%
+  //   right == 100% 50%
+  //   top == 50% 0%
+  //   bottom == 50% 100%
+  // Two values => one value defines X and the other defines Y
+  //
 
-    // A four-value syntax alternates between keywords and length or percentage units.
-    // You can use any of the keyword values except center.
-    // This positions the background image 10% from the left and 20% from the bottom of
-    // the container. moving a background image by X% means it will align the X% point
-    // in the image to the X% point in the container.
-    //    background-position: left 10% bottom 70%; // [2]
+  // A four-value syntax alternates between keywords and length or percentage units.
+  // You can use any of the keyword values except center.
+  // This positions the background image 10% from the left and 20% from the bottom of
+  // the container. moving a background image by X% means it will align the X% point
+  // in the image to the X% point in the container.
+  //    background-position: left 10% bottom 70%; // [2]
 
-    // When you declare two values, the first value is the horizontal offset
-    // and the second value is the vertical offset. moving a background image
-    // by X% means it will align the X% point in the image to the X% point in the container.
-    //    background-position: 10% 30%;   // This is the same as [2]
+  // When you declare two values, the first value is the horizontal offset
+  // and the second value is the vertical offset. moving a background image
+  // by X% means it will align the X% point in the image to the X% point in the container.
+  //    background-position: 10% 30%;   // This is the same as [2]
 
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-origin: padding-box; // because size is 'cover' top and bottom should be clipped
-    // background-clip: padding-box;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-origin: padding-box; // because size is 'cover' top and bottom should be clipped
+  // background-clip: padding-box;
 
-    // TODO: only illustrates the difference between content-box vs padding-box in background-origin/background-clip
-    //border: 5px dashed red;
-    //padding: 10px;
+  // TODO: only illustrates the difference between content-box vs padding-box in background-origin/background-clip
+  //border: 5px dashed red;
+  //padding: 10px;
+
+  // @include respond-to('non-mobile') {
+  //     height: 40vh;
+  //     background-position: center 25%; // see more of the top of the image on bigger devices
+  // }
+
+  &__title {
+    color: $color-white;
+    font-family: 'Anton', sans-serif;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 100%;
+    padding: 0;
+    margin: 0; // reset h1 user-agent margin
+    font-size: 1.6rem;
 
     // @include respond-to('non-mobile') {
-    //     height: 40vh;
-    //     background-position: center 25%; // see more of the top of the image on bigger devices
+    //     font-size: 3rem;
     // }
-
-    &__title {
-        color: $color-white;
-        font-family: 'Anton', sans-serif;
-        position: absolute;
-        bottom: 10%;
-        left: 5%;
-        width: 100%;
-        padding: 0;
-        margin: 0; // reset h1 user-agent margin
-        font-size: 1.6rem;
-
-        // @include respond-to('non-mobile') {
-        //     font-size: 3rem;
-        // }
-
-    }
-
+  }
 }
 
 //@include respond-to('non-mobile-and-portrait') {
 //@include respond-to('non-mobile-min-height') {
 @include respond-to('non-mobile') {
+  // NOTE: cannot use '&__' to nest element in block
 
-    // NOTE: cannot use '&__' to nest element in block
+  .product-overview {
+    height: 40vh;
+    background-position: 50% 25%; // see more of the top of the image on bigger devices
+    background-size: cover;
+  }
 
-    .product-overview {
-        height: 40vh;
-        background-position: 50% 25%; // see more of the top of the image on bigger devices
-        background-size: cover;
-    }
-
-    .product-overview__title {
-        font-size: 3rem;
-    }
+  .product-overview__title {
+    font-size: 3rem;
+  }
 }
-
-
 
 // Mobile-first design: Start with getting things look good for small devices, and
 // overwrite for larger devices

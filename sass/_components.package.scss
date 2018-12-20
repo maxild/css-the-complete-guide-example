@@ -3,19 +3,19 @@
 ---------------------------------------------*/
 
 .background {
-    @include size(100vw, 100vh);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: z('below'); // image stays behind the plans
+  @include size(100vw, 100vh);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z('below'); // image stays behind the plans
 
-    background: url("../img/plans-background.jpg") center/cover;
-    filter: grayscale(100%); // IE doesn't support this (needs polyfill)
+  background: url('../img/plans-background.jpg') center/cover;
+  filter: grayscale(100%); // IE doesn't support this (needs polyfill)
 }
 
 .packages {
-    @include clearfix;
-    padding: $rem-spacing-unit;
+  @include clearfix;
+  padding: $rem-spacing-unit;
 }
 
 /* -------------------------------------------
@@ -23,55 +23,57 @@
 ---------------------------------------------*/
 
 .package {
-    position: relative; // positioning context
-    border: 4px solid $color-brand-much-darker;
-    border-left: none;
-    margin: 1rem 0;
-    width: 80%;
-    max-width: 60rem;
+  position: relative; // positioning context
+  border: 4px solid $color-brand-much-darker;
+  border-left-style: none;
+  margin: 1rem 0;
+  width: 80%;
+  max-width: 60rem;
 
-    // because the link is the entire box
-    &:hover,
-    &:active {
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // x-offset y-offset blur-radius color
-        border-color: $color-red-highligt;
-    }
+  // because the link is the entire box
+  &:hover,
+  &:active {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // x-offset y-offset blur-radius color
+    border-color: $color-red-highligt;
+  }
 
-    & > a {
-        text-decoration: none;
-        display: block; // make the entire box a link
-        padding: 2rem;
-        color: inherit; // no cascaded value, inherit from parent instead of using user agent stylesheet value
-    }
 
-    &__badge {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        margin: 0; // h1 by default has top/bottom-margin
-        padding: .5rem;
-        font-size: .8rem;
-        color: $color-white;
-        background-color: $color-red;
-        z-index: z('badge');
-    }
+}
 
-    &__subtitle {
-        color: $color-gray-light;
-    }
+.package > a {
+  text-decoration: none;
+  display: block; // make the entire box a link
+  padding: 2rem;
+  color: inherit; // no cascaded value, inherit from parent instead of using user agent stylesheet value
+}
 
-    &__info {
-        color: $color-brand-much-darker;
-        font-size: 1.25rem;
-        background: $color-white;
-        border: 1px solid $color-brand-much-darker;
-        padding: 1rem;
-    }
+.package__badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  margin: 0; // h1 by default has top/bottom-margin
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: $color-white;
+  background-color: $color-red;
+  z-index: z('badge');
+}
 
-    // override color of the title for premium
-    .package--premium &__title {
-        color: $color-white;
-    }
+.package__subtitle {
+  color: $color-gray-light;
+}
+
+.package__info {
+  color: $color-brand-much-darker;
+  font-size: 1.25rem;
+  background: $color-white;
+  border: 1px solid $color-brand-much-darker;
+  padding: 1rem;
+}
+
+// override color of the title for premium
+.package--premium .package__title {
+  color: $color-white;
 }
 
 // Define bg-color for the 3 boxes
@@ -80,33 +82,35 @@
 //       because package is always either plus, free or premium
 
 .package--plus {
-    float: left;
-    background-color: rgba($color-brand-light, 0.95);
+  float: left;
+  background-color: rgba($color-brand-light, 0.95);
 }
 
 .package--free {
-    background-color: rgba($color-brand-light, 0.95);
-    float: right;
-    border-right: none;
-    border-left: 4px solid $color-brand-much-darker;
-    //text-align: right;
+  background-color: rgba($color-brand-light, 0.95);
+  float: right;
+  border-right-style: none;
+  border-left: 4px solid $color-brand-much-darker;
+  //text-align: right;
 }
 
 .package--premium {
-    float: left;
-    background-color: rgba($color-brand-much-darker, 0.95);
+  float: left;
+  background-color: rgba($color-brand-much-darker, 0.95);
 }
 
 // borders on all sides for huge devices and center the boxes
 @include respond_to('huge') {
-    .packages {
-        margin: auto;
-        max-width: $screen-huge-width;
-    }
-    .package {
-        border-left: 4px solid $color-brand-much-darker;
-    }
-    .package--free {
-        border-right: 4px solid $color-brand-much-darker;
-    }
+  .packages {
+    margin: auto;
+    max-width: $screen-huge-width;
+  }
+
+  .package {
+    border-left: 4px solid $color-brand-much-darker;
+  }
+
+  .package--free {
+    border-right: 4px solid $color-brand-much-darker;
+  }
 }

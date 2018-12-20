@@ -3,34 +3,34 @@
 ---------------------------------------------*/
 
 .main-footer {
-    background-color: black;
-    padding: $main-footer-padding;
-    margin-top: $main-footer-top-margin;
+  background-color: $color-black;
+  margin-top: $main-footer-top-margin;
+  padding: $main-footer-padding;
+}
 
-    &__links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
+.main-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-    &__link {
-        margin: 1rem 0;
+.main-footer__link {
+  margin: 1rem 0;
 
-        @include respond-to('non-mobile') {
-            display: inline-block;
-            margin: 0 1rem;
-        }
+  @include respond-to('non-mobile') {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+}
 
-        // specificity (0, 1, 1) here
-        & > a {
-            color: $color-white;
-            text-decoration: none;
+// specificity (0, 1, 1) here
+.main-footer__link > a {
+  color: $color-white;
+  text-decoration: none;
 
-            &:link,
-            &:hover {
-                color: $color-gray-lighter;
-            }
-        }
-    }
+  &:link,
+  &:hover {
+    color: $color-gray-lighter;
+  }
 }

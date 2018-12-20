@@ -3,9 +3,9 @@
 ---------------------------------------------*/
 
 .plans__title {
-    color: $color-brand;
-    font-weight: bold;
-    text-align: center;
+  color: $color-brand;
+  font-weight: bold;
+  text-align: center;
 }
 
 // We don't need .plans__list in our mobile design
@@ -27,98 +27,98 @@
 ---------------------------------------------*/
 
 .plan {
-    background: $color-brand-light;
-    text-align: center;
-    padding: 1rem;
-    margin: .5rem 0;
-    width: 100%;
+  background: $color-brand-light;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  width: 100%;
 
-    // @include respond-to('non-mobile') {
-    //     @include ib();
-    //     width: 30%;
-    //     min-width: 12.5rem; // 200px
-    //     max-width: $plan-max-width; // 400px
+  // @include respond-to('non-mobile') {
+  //     @include ib();
+  //     width: 30%;
+  //     min-width: 12.5rem; // 200px
+  //     max-width: $plan-max-width; // 400px
+  // }
+
+  &__title {
+    color: $color-brand-much-darker;
+
+    // .plan--highlighted & {
+    //     color: $color-white;
     // }
+  }
 
-    &__title {
-        color: $color-brand-much-darker;
+  &__price {
+    color: $color-gray-light;
 
-        // .plan--highlighted & {
-        //     color: $color-white;
-        // }
-    }
+    // .plan--highlighted & {
+    //     color: $color-brand-much-darker;
+    // }
+  }
 
-    &__price {
-        color: $color-gray-light;
+  &__annotation {
+    color: $color-brand-dark;
+    background: $color-white;
+    padding: 8px;
+    box-shadow: 2px 2px 2px 2px $color-shadow;
+    border-radius: $base-radius;
+  }
 
-        // .plan--highlighted & {
-        //     color: $color-brand-much-darker;
-        // }
-    }
+  &__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-    &__annotation {
-        color: $color-brand-dark;
-        background: $color-white;
-        padding: 8px;
-        box-shadow: 2px 2px 2px 2px $color-shadow;
-        border-radius: $base-radius;
-    }
-
-    &__features {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    &__feature {
-        margin: 8px 0;
-    }
+  &__feature {
+    margin: 8px 0;
+  }
 }
 
 // We define alle variation overrides in one place
 .plan--highlighted {
-    background: $color-brand-dark;
-    color: $color-white;
+  background: $color-brand-dark;
+  color: $color-white;
 
-    @include respond-to('non-mobile') {
-        box-shadow: 2px 2px 2px 2px $color-shadow;
-    }
+  @include respond-to('non-mobile') {
+    box-shadow: 2px 2px 2px 2px $color-shadow;
+  }
+}
 
-    // The below is one of a few occasions where we’d use a descendant
-    // selector to modify an Element based on a Modifier on the Block.
-    & .plan__title {
-        color: $color-white;
-    }
+// TODO: Could nest the following selectors in .plan__title and .plan__price??
 
-    // The below is one of a few occasions where we’d use a descendant
-    // selector to modify an Element based on a Modifier on the Block.
-    & .plan__price {
-        color: $color-brand-much-darker;
-    }
+// The below is one of a few occasions where we’d use a descendant
+// selector to modify an Element based on a Modifier on the Block.
+.plan--highlighted .plan__title {
+  color: $color-white;
+}
+
+// The below is one of a few occasions where we’d use a descendant
+// selector to modify an Element based on a Modifier on the Block.
+.plan--highlighted .plan__price {
+  color: $color-brand-much-darker;
 }
 
 //@include respond-to('non-mobile-and-landscape') {
 //@include respond-to('non-mobile-or-landscape') {
 @include respond-to('non-mobile') {
+  .plans__list {
+    width: 100%;
+    // NOTE: This auto-centering only works for block-level elements with a defined width
+    //margin: auto;   // [1] center horizontally
+    // The following is equivalent to [1]
+    //margin: 0 auto;\
+    text-align: center; // center (inline-block) .plan elements
+  }
 
-    .plans__list {
-        width: 100%;
-        // NOTE: This auto-centering only works for block-level elements with a defined width
-        //margin: auto;   // [1] center horizontally
-        // The following is equivalent to [1]
-        //margin: 0 auto;\
-        text-align: center; // center (inline-block) .plan elements
-    }
+  .plan {
+    @include ib();
+    width: 30%;
+    min-width: 12.5rem; // 200px
+    max-width: $plan-max-width; // 400px
+  }
 
-    .plan {
-        @include ib();
-        width: 30%;
-        min-width: 12.5rem; // 200px
-        max-width: $plan-max-width; // 400px
-    }
-
-    .plan--highlighted {
-        box-shadow: 2px 2px 2px 2px $color-shadow;
-    }
+  .plan--highlighted {
+    box-shadow: 2px 2px 2px 2px $color-shadow;
+  }
 }
-

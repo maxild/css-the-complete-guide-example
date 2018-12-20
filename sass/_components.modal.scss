@@ -9,7 +9,7 @@
   top: 20%;
   left: 30%;
   width: 40%;
-  background: white;
+  background: $color-white;
   padding: 1rem;
   border: 1px solid $color-gray-lighter;
   box-shadow: 1px 1px 1px $color-shadow;
@@ -17,7 +17,7 @@
 
 .modal__title {
   text-align: center;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
 }
 
 .modal__actions {
@@ -28,7 +28,7 @@
   border: 1px solid $color-brand-much-darker;
   background: $color-brand-much-darker;
   text-decoration: none;
-  color: white;
+  color: $color-white;
   font: inherit;
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -41,8 +41,8 @@
 }
 
 .modal__action--negative {
-  background: red;
-  border-color: red;
+  background: color-red;
+  border-color: color-red;
 }
 
 .modal__action--negative:hover,

@@ -3,46 +3,46 @@
 ---------------------------------------------*/
 
 .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: $main-header-height;
-    padding: $main-header-padding 1rem;
-    margin: 0;
-    z-index: z('main-header');
-    font-size: .9rem;
-    background: $color-brand;
+  background: $color-brand;
+  font-size: 0.9rem;
+  height: $main-header-height;
+  left: 0;
+  margin: 0;
+  padding: $main-header-padding 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: z('main-header');
 }
 
 .main-header__hamburger {
-    @include ib();
+  @include ib();
 
-    @include respond-to('non-mobile') {
-        display: none;
-    }
+  @include respond-to('non-mobile') {
+    display: none;
+  }
 }
 
 /* a */
 .main-header__brand {
-    color: $color-brand-much-darker;
 
-    // The required alt attribute specifies an alternate text
-    // for an image, if the image cannot be displayed.
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
+  // now we can set height in percentages on the img element
+  @include ib();
+  color: $color-brand-much-darker;
+  font-size: 1rem;
+  font-weight: bold;
+  height: $main-header-content-height;
 
-    // now we can set height in percentages on the img element
-    @include ib();
+  // The required alt attribute specifies an alternate text
+  // for an image, if the image cannot be displayed.
+  text-decoration: none;
 
-    width: $main-header-logo-width;
-    height: $main-header-content-height;
+  width: $main-header-logo-width;
 
-    img {
-        height: 100%;
-        // img elements cannot be positioned and sized like bg-images
-        // (negative) margins is about the only hack that works
-        //margin-top: -10px;
-    }
+  img {
+    height: 100%;
+    // img elements cannot be positioned and sized like bg-images
+    // (negative) margins is about the only hack that works
+    //margin-top: -10px;
+  }
 }

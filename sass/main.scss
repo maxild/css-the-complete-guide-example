@@ -1,48 +1,47 @@
-@import "settings.colors";
-@import "settings.global";
+@import 'settings.colors';
+@import 'settings.global';
 
-@import "tools.breakpoints";
-@import "tools.clearfix";
-@import "tools.background-image";
-@import "tools.nav-links";
-@import "tools.mixins";
+@import 'tools.breakpoints';
+@import 'tools.clearfix';
+@import 'tools.background-image';
+@import 'tools.nav-links';
+@import 'tools.mixins';
 
 // Here we start using tag/type selectors
 
 // The generic layer can be shared by all your projects
-@import "generic.box-sizing";
-@import "generic.reset";
+@import 'generic.box-sizing';
+@import 'generic.reset';
 
-@import "elements.base";
+@import 'elements.base';
 
 // layout
-@import "components.main-header";
-@import "components.main-footer";
+@import 'components.main-header';
+@import 'components.main-footer';
 
-@import "components.main-nav";
-@import "components.mobile-nav";
+@import 'components.main-nav';
+@import 'components.mobile-nav';
 
 // NOTE: placeholder selectors and @extend have been replaced with mixins!!!
 //@import "components.nav-links";
 
-
 // generic components
-@import "components.backdrop";
-@import "components.modal";
+@import 'components.backdrop';
+@import 'components.modal';
 
 // app components
-@import "components.product-overview";
-@import "components.buttons";
-@import "components.plan";
-@import "components.package";
-@import "components.key-features";
-@import "components.customer";
+@import 'components.product-overview';
+@import 'components.buttons';
+@import 'components.plan';
+@import 'components.package';
+@import 'components.key-features';
+@import 'components.customer';
 
 // trump layer
-@import "utilities.clearfix";
+@import 'utilities.clearfix';
 
-@import "trumps.states";
-@import "trumps.helpers";
+@import 'trumps.states';
+@import 'trumps.helpers';
 
 /* -------------------------------------------
               BEM explained

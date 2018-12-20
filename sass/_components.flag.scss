@@ -6,40 +6,38 @@
 // Credits: https://csswizardry.com/2013/05/the-flag-object/
 
 .flag {
-    display: table;
-    width: 100%;
+  display: table;
+  width: 100%;
 }
 
-    .flag__image,
-    .flag__body {
-        display: table-cell;
-        vertical-align: middle;
+.flag__image,
+.flag__body {
+  display: table-cell;
+  vertical-align: middle;
 
-        .flag--top & {
-            vertical-align: top;
-        }
+  .flag--top & {
+    vertical-align: top;
+  }
 
-        .flag--bottom & {
-            vertical-align: bottom;
-        }
+  .flag--bottom & {
+    vertical-align: bottom;
+  }
+}
 
-    }
+.flag__image {
+  padding-right: $base-spacing-unit;
 
-    .flag__image {
-        padding-right: $base-spacing-unit;;
+  > img {
+    display: block;
+    max-width: none;
+  }
 
-        > img {
-            display: block;
-            max-width: none;
-        }
+  .flag--rev & {
+    padding-left: $base-spacing-unit;
+    padding-right: 0;
+  }
+}
 
-        .flag--rev & {
-            padding-right: 0;
-            padding-left: $base-spacing-unit;;
-        }
-
-    }
-
-    .flag__body {
-        width: 100%;
-    }
+.flag__body {
+  width: 100%;
+}
