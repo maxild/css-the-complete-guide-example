@@ -3,7 +3,7 @@
 ---------------------------------------------*/
 
 .testimonial-container {
-    padding: $rem-spacing-unit;
+  padding: $rem-spacing-unit;
 }
 
 // Some hacky layout
@@ -14,88 +14,88 @@
 
 // Component: box of two inner boxes
 .testimonial {
-    font-size: 1.2rem; // TODO: This is really not needed because all text is sized in rem's below
+  font-size: 1.2rem; // TODO: This is really not needed because all text is sized in rem's below
 
-    // image-box
-    &__image-container {
-        width: 100%;
-        max-width: $testimonial-image-max-width;
-        box-shadow: 3px 3px 5px 3px $color-shadow-light;
+  // image-box
+  &__image-container {
+    box-shadow: 3px 3px 5px 3px $color-shadow-light;
+    max-width: $testimonial-image-max-width;
+    width: 100%;
+  }
+
+  &__image {
+    vertical-align: top; // hack to get rid off white-space border when using box-shadow on the container
+    width: 100%;
+    // display: block; // This hack will also remove the whitespace
+  }
+
+  // text-box
+  &__info {
+    padding: 0.9rem;
+    text-align: right;
+    //max-width: $testimonial-info-max-width;
+  }
+
+  &__name {
+    color: #ff5454;
+    font-size: 2rem;
+    margin: 0.2rem;
+  }
+
+  &__subtitle {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover,
+      &:active {
+        color: #7a7a7a;
+      }
     }
+  }
 
-        &__image {
-            width: 100%;
-            vertical-align: top; // hack to get rid off white-space border when using box-shadow on the container
-            // display: block; // This hack will also remove the whitespace
-        }
-
-    // text-box
-    &__info {
-        padding: .9rem;
-        text-align: right;
-        //max-width: $testimonial-info-max-width;
-    }
-        &__name {
-            font-size: 2rem;
-            margin: .2rem;
-            color: #ff5454;
-        }
-
-        &__subtitle {
-            font-size: 1.1rem;
-            margin: 0;
-            color: #ccc;
-
-            a {
-                color: inherit;
-                text-decoration: none;
-
-                &:hover,
-                &:active {
-                    color: #7a7a7a;
-                }
-            }
-        }
-
-        &__text {
-            font-size: 1.2rem;
-            margin: .2rem;
-        }
+  &__text {
+    font-size: 1.2rem;
+    margin: 0.2rem;
+  }
 }
 
 @include respond-to('non-mobile') {
+  // .testimonial-container {
+  //     width: $testimonial-max-width + 10rem;
+  //     // margin-top is 3rem to the main-nav
+  //     // margin: calc(3rem + #{$main-header-height}) auto 0 auto; // center
+  //     margin-left: auto;
+  //     margin-right: auto;
+  // }
 
-    // .testimonial-container {
-    //     width: $testimonial-max-width + 10rem;
-    //     // margin-top is 3rem to the main-nav
-    //     // margin: calc(3rem + #{$main-header-height}) auto 0 auto; // center
-    //     margin-left: auto;
-    //     margin-right: auto;
-    // }
+  .testimonial {
+    margin: 3rem auto;
+    max-width: $screen-huge-width;
+  }
 
-    .testimonial {
-        margin: 3rem auto;
-        max-width: $screen-huge-width;
-    }
+  .testimonial__image-container {
+    @include ib();
+    width: $testimonial-image-width;
+  }
 
-    .testimonial__image-container {
-        @include ib();
-        width: $testimonial-image-width;
-    }
-
-    .testimonial__info {
-        @include ib();
-        width: $testimonial-info-width;;
-    }
+  .testimonial__info {
+    @include ib();
+    width: $testimonial-info-width;
+  }
 }
 
 // TODO: Source order in html decides on reverse
 
 .testimonial--reverse > .testimonial__info {
-    text-align: left;
+  text-align: left;
 }
 
 .testimonial--reverse > .testimonial__image-container {
-    box-shadow: -3px 3px 5px $color-shadow-light;
-    //text-align: left;
+  box-shadow: -3px 3px 5px $color-shadow-light;
+  //text-align: left;
 }

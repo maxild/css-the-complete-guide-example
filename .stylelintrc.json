@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "selector-class-pattern": [
+      "^(?:(?:o|u|is|has|js)-)?[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+      {
+        "message": "Class names should match the 'lower case two dashes' BEM naming convention: 'block-name__elem-name--mod-name'"
+      }
+    ],
+    "scss/dollar-variable-colon-space-before": "never",
+    "scss/dollar-variable-colon-space-after": "at-least-one-space",
+    "order/properties-alphabetical-order": false
+  }
+}

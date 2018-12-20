@@ -10,15 +10,15 @@
 // style, or completely hide everything located below the element when it's
 // the topmost one in the top layer.
 .backdrop {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    z-index: z('backdrop');
-    width: 100vw;
-    height: 100vh;
-    // OBS: position: fixed => containing block is the viewport, so no real difference between % and vw/vh
-    // width: 100%;
-    // height: 100%;
-    background: $color-shadow;
+  // OBS: position: fixed => containing block is the viewport, so no real difference between % and vw/vh
+  // width: 100%;
+  // height: 100%;
+  background: $color-shadow;
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: z('backdrop');
 }

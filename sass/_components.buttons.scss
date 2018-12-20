@@ -3,25 +3,24 @@
 ---------------------------------------------*/
 
 .button {
-    color: $color-btn;
-    background-color: $color-bg-btn;
-    font: inherit; /* override font styles in user agent with our body styles */
-    font-weight: bold;
-    border: 1.5px solid $color-bg-btn;
-    padding: .5rem;
-    border-radius: $base-radius; // keep pixels here
-    cursor: pointer;
+  background-color: $color-bg-btn;
+  border: 1.5px solid $color-bg-btn;
+  border-radius: $base-radius; // keep pixels here
+  color: $color-btn;
+  cursor: pointer;
+  font: inherit; /* override font styles in user agent with our body styles */
+  font-weight: bold;
+  padding: 0.5rem;
 }
 
 .button:hover,
 .button:active {
-    color: $color-btn-hover;
-    background-color: $color-bg-btn-hover;
-
+  background-color: $color-bg-btn-hover;
+  color: $color-btn-hover;
 }
 
 .button:focus {
-    outline: none;
+  outline: none;
 }
 
 /* -------------------------------------------
@@ -32,13 +31,13 @@
 ---------------------------------------------*/
 
 .toggle-button {
-  width: $main-header-hamburger-width;
   background: transparent;
-  border: none;
+  border: 0;
   cursor: pointer;
-  padding-top: 0;
   padding-bottom: 0;
+  padding-top: 0;
   vertical-align: middle;
+  width: $main-header-hamburger-width;
 }
 
 .toggle-button:focus {
@@ -46,10 +45,9 @@
 }
 
 .toggle-button__bar {
-  width: 100%;
-  background: black;
+  background: $color-black;
   display: block;
   height: 0.1rem;
   margin: 0.4rem 0;
+  width: 100%;
 }
-
