@@ -1,0 +1,47 @@
+/* -------------------------------------------
+          _components.signup.scss
+---------------------------------------------*/
+
+.signup {
+  padding-top: $rem-spacing-unit;
+}
+
+.signup__title {
+  font-size: 2rem;
+  text-align: center;
+  color: $color-red;
+}
+
+.signup__form {
+  padding: 1rem;
+}
+
+.signup__form label {
+  font-weight: bold;
+}
+
+.signup__form label,
+.signup__form input,
+.signup__form select {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.signup__form [type='checkbox'],
+.signup__form [type='checkbox'] + label {
+  display: inline-block;
+  width: auto;
+}
+
+.signup__form .button[type='submit'] {
+  display: block;
+  margin-top: 1rem;
+}
+
+@include respond-to('non-mobile') {
+  .signup__form {
+    margin: auto;
+    width: 30rem;
+  }
+}

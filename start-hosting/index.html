@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+
+        <!--
+            device-width is the width of the screen in CSS pixels
+            at a scale of 100%. The initial-scale property controls
+            the zoom level when the page is first loaded.
+         -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>uHost Signup</title>
+
+        <link rel="shortcut icon" href="../favicon.png" />
+
+        <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat:400,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/styles.min.css" />
+    </head>
+
+    <body>
+        <div class="backdrop"></div>
+
+        <!--component with javascript. need to define a better javascript encapsulation/architecture -->
+        <div class="modal">
+            <h1 class="modal__title">Do you want to continue?</h1>
+            <div class="modal__actions">
+                <a href="index.html" class="modal__action">Yes!</a>
+                <button class="modal__action modal__action--negative" type="button">No!</button>
+            </div>
+        </div>
+
+        <header class="main-header">
+            <div class="u-ib">
+                <div class="main-header__hamburger">
+                    <button class="toggle-button">
+                        <span class="toggle-button__bar"></span>
+                        <span class="toggle-button__bar"></span>
+                        <span class="toggle-button__bar"></span>
+                    </button>
+                </div>
+                <a href="../index.html" class="main-header__brand">
+                    <img src="../img/uhost-icon.png" alt=" uHost ">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="main-nav__items">
+                    <li class="main-nav__item">
+                        <a href="../packages/index.html">Packages</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="../customers/index.html">Customers</a>
+                    </li>
+                    <li class="main-nav__item main-nav__item--cta">
+                        <a href="index.html">Start Hosting</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav class="mobile-nav">
+            <ul class="mobile-nav__items">
+                <li class="mobile-nav__item">
+                    <a href="../packages/index.html">Packages</a>
+                </li>
+                <li class="mobile-nav__item">
+                    <a href="../customers/index.html">Customers</a>
+                </li>
+                <li class="mobile-nav__item mobile-nav__item--cta">
+                    <a href="index.html">Start Hosting</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="signup">
+                <h1 class="signup__title">Awesome! Let's dive right in!</h1>
+                <form action="index.html" class="signup__form">
+                    <label for="title">Title</label>
+                    <select id="title">
+                        <option value="mr">Mr.</option>
+                        <option value="ms">Ms.</option>
+                    </select>
+                    <label for="first-name">First name</label>
+                    <input type="text" id="first-name">
+                    <label for="last-name">Last name</label>
+                    <input type="text" id="last-name">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email">
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                    <input type="checkbox" id="agree-terms">
+                    <label for="agree-terms">Agree to
+                        <a href="#">Terms &amp; Conditions</a>
+                    </label>
+                    <button type="submit" class="button">Sign Up</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <nav>
+                <ul class="main-footer__links">
+                    <li class="main-footer__link">
+                        <a href="#">Support</a>
+                    </li>
+                    <li class="main-footer__link">
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+
+
+        <!--page or global js?? -->
+        <script src="../js/main.js"></script>
+
+    </body>
+
+</html>
