@@ -2,9 +2,9 @@
 // Base px units
 //
 
-$base-radius:       8px;
-$base-font-size:    16px;
-$base-line-height:  24px;
+$base-radius: 8px;
+$base-font-size: 16px;
+$base-line-height: 24px;
 $base-spacing-unit: $base-line-height;
 
 $rem-spacing-unit: ($base-line-height / $base-font-size) * 1rem;
@@ -56,7 +56,7 @@ $testimonial-info-max-width: ($testimonial-info-width / 100%) * $testimonial-max
 
 // nav-bar stays on top of both plans and bg-image
 
-$Z_INDEXES: (
+$_z-indexes: (
   'modal': 200,
   'backdrop': 100,
   'mobile-nav': 101,
@@ -66,7 +66,7 @@ $Z_INDEXES: (
 );
 
 @function z($layer) {
-  @return map-get($Z_INDEXES, $layer);
+  @return map-get($_z-indexes, $layer);
 }
 
 //
@@ -79,20 +79,20 @@ $Z_INDEXES: (
 
 $screen-medium-width: 40rem;   // 640px (~tablet)
 $screen-medium-height: 40rem;
-$screen-large-width:  60rem;   // 960px (~desktop)
+$screen-large-width: 60rem;   // 960px (~desktop)
 $screen-huge-width: 1500px;
 
 // If you use a 'mobile-first' approach, the folowing breakpoints should suit you well
 // since you won’t need anything else than min-width media queries.
 $breakpoints: (
-    // untraditional breakpoint naming, because this is a course that teaches the mobile-first approach
-    'non-mobile': '(min-width: #{$screen-medium-width})',
-    'non-mobile-min-height': '(min-width: #{$screen-medium-width}) and (min-height: #{$screen-medium-height})',
-    'non-mobile-and-portrait': '(min-width: #{$screen-medium-width}) and (orientation: portrait)',
-    'non-mobile-and-landscape': '(min-width: #{$screen-medium-width}) and (orientation: landscape)',
-    'non-mobile-or-landscape': '(min-width: #{$screen-medium-width}), (orientation: landscape)',
-    'huge': '(min-width: #{$screen-huge-width})',
-//   'large': '(min-width: #{$screen-large-width})',
+  // untraditional breakpoint naming, because this is a course that teaches the mobile-first approach
+  'non-mobile': '(min-width: #{$screen-medium-width})',
+  'non-mobile-min-height': '(min-width: #{$screen-medium-width}) and (min-height: #{$screen-medium-height})',
+  'non-mobile-and-portrait': '(min-width: #{$screen-medium-width}) and (orientation: portrait)',
+  'non-mobile-and-landscape': '(min-width: #{$screen-medium-width}) and (orientation: landscape)',
+  'non-mobile-or-landscape': '(min-width: #{$screen-medium-width}), (orientation: landscape)',
+  'huge': '(min-width: #{$screen-huge-width})',
+  //   'large': '(min-width: #{$screen-large-width})',
 );
 
 // NOTE: Nested maps are also possible

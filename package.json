@@ -4,10 +4,21 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "help": "node-sass --help",
-        "sass": "node-sass sass/main.scss css/styles.css",
         "watch": "node-sass -r --watch sass/main.scss css/styles.css",
-        "eslint": "eslint js/main.js"
+        "eslint": "eslint js/main.js",
+        "repair-npm-dedupe": "cross-env-shell shx rm -rf package-lock.json && rm -rf \"node_modules/\" && npm install --no-optional && npm dedupe",
+        "css": "npm-run-all css-clean css-lint css-compile css-prefix css-minify",
+        "css-dev": "npm-run-all css-clean css-lint css-compile css-prefix",
+        "css-clean": "cross-env-shell shx rm -rf css",
+        "css-lint": "stylelint --syntax scss \"sass/*.scss\"",
+        "css-compile": "node-sass sass/main.scss css/styles.css",
+        "css-prefix": "postcss --config build/postcss.config.js --replace \"css/styles.css\" \"!css/styles.min.css\"",
+        "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output css/styles.min.css css/styles.css",
+        "fix-code": "prettier-eslint --write 'js/main.js' ",
+        "fix-styles": "prettier-stylelint --write 'sass/*.scss' ",
+        "css:watch": "nodemon --watch sass/ --ext scss --exec \"npm run css\"",
+        "css:watch-dev": "nodemon --watch sass/ --ext scss --exec \"npm run css-dev\"",
+        "css-autoprefix": "postcss --use autoprefixer --replace \"css/styles.css\" \"!css/styles.min.css\""
     },
     "repository": {
         "type": "git",
@@ -20,7 +31,19 @@
     },
     "homepage": "https://github.com/maxild/css-the-complete-guide-example#readme",
     "devDependencies": {
+        "autoprefixer": "^9.4.3",
+        "clean-css-cli": "^4.2.1",
+        "cross-env": "^5.2.0",
         "eslint": "^5.10.0",
-        "node-sass": "^4.11.0"
+        "node-sass": "^4.11.0",
+        "nodemon": "^1.18.9",
+        "npm-run-all": "^4.1.5",
+        "postcss-cli": "^6.1.0",
+        "prettier-eslint": "^8.8.2",
+        "prettier-eslint-cli": "^4.7.1",
+        "prettier-stylelint": "^0.4.2",
+        "shx": "^0.3.2",
+        "stylelint": "^9.9.0",
+        "stylelint-config-sass-guidelines": "^5.3.0"
     }
 }
