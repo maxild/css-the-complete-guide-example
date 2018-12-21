@@ -12,12 +12,10 @@
   color: $color-red;
 }
 
+// Layout form elements
+
 .signup__form {
   padding: 1rem;
-}
-
-.signup__form label {
-  font-weight: bold;
 }
 
 .signup__form label,
@@ -32,12 +30,57 @@
 .signup__form [type='checkbox'] + label {
   display: inline-block;
   width: auto;
+  vertical-align: bottom;
 }
 
-.signup__form .button[type='submit'] {
+.signup__form [type='submit'] {
   display: block;
   margin-top: 1rem;
 }
+
+// restyling form elements
+
+.signup__form label {
+  font-weight: bold;
+}
+
+.signup__form input:not([type='checkbox']),
+.signup__form select {
+  border: 1px solid $color-gray-lighter;
+  padding: 0.2rem 0.5rem;
+  font: inherit; // could also define font-stack variable
+
+  &:focus {
+    outline: none;
+    background: $color-brand-light;
+    border-color: $color-brand;
+  }
+}
+
+.signup__form [type='checkbox'] {
+  border: 1px solid $color-gray-lighter;
+  background: $color-white;
+  width: 1rem;
+  height: 1rem;
+  // Autoprefixer will create these for us
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  /* CSS Basic User Interface Module Level 4 values */
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    background: $color-brand-light;
+    border-color: $color-brand;
+  }
+
+  &:checked {
+    background: $color-brand;
+    border-color: $color-brand-much-darker;
+  }
+}
+
+// media query
 
 @include respond-to('non-mobile') {
   .signup__form {
