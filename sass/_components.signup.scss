@@ -53,7 +53,7 @@
   &:focus {
     outline: none;
     background: $color-brand-light;
-    border-color: $color-brand;
+    border-color: $color-brand; // specificity = (0, 2, 1)
   }
 }
 
@@ -87,4 +87,14 @@
     margin: auto;
     width: 30rem;
   }
+}
+
+// validation helpers
+
+// move to trumps/utilities/helpers
+// TODO: learn more about HTML5 forms: required attribute
+.signup__form :invalid, // browser automatically validates email
+.invalid {
+  border-color: $color-red !important;
+  background: $color-red-light !important;
 }
