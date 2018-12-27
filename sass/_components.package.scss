@@ -62,12 +62,16 @@
 }
 
 .package__info {
-  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  //font: 700 1.2rem 'AnonymousPro', sans-serif;
+  // font: font-style font-variant font-weight font-size/line-height font-family
   color: $color-brand-much-darker;
-  font-size: 1.25rem;
   background: $color-white;
   border: 1px solid $color-brand-much-darker;
   padding: 1rem;
+  // Trying out text/typography properties
+  //text-decoration: underline wavy $color-red;
+  //text-shadow: 5px 5px 7px $color-gray-light;
 }
 
 // override color of the title for premium

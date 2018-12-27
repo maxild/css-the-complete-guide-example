@@ -20,10 +20,40 @@
 //     /* Safari, Android, iOS */ url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 // }
 
+// NOTE: Only use woff2, woff and ttf
+
+@font-face {
+  font-family: 'AnonymousPro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/anonymousPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AnonymousPro';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/anonymousPro-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AnonymousPro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/anonymousPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AnonymousPro';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/anonymousPro-BoldItalic.ttf') format('truetype');
+}
+
 // NOTE: If you open the URL for the font, you can actually see all the @font-face work being done behind the scenes.
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Anton');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
 
 // Here we start using tag/type selectors
 
