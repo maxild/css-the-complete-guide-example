@@ -65,11 +65,18 @@
   font-size: 1.2rem;
   //font: 700 1.2rem 'AnonymousPro', sans-serif;
   // font: font-style font-variant font-weight font-size/line-height font-family
+  // NOTE: font-size and font-family are obligatory when using shorthand!!!
   color: $color-brand-much-darker;
   background: $color-white;
   border: 1px solid $color-brand-much-darker;
   padding: 1rem;
   // Trying out text/typography properties
+  //    letter-spacing
+  //    white-space
+  //    line-height
+  //    text-decoration
+  //    text-shadow
+  //    text-transform
   //text-decoration: underline wavy $color-red;
   //text-shadow: 5px 5px 7px $color-gray-light;
 }
