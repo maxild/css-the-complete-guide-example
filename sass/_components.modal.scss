@@ -29,7 +29,7 @@
   background: $color-brand-much-darker;
   text-decoration: none;
   color: $color-white;
-  font: inherit;
+  //font: inherit; // This is done in _elements.base.scss
   padding: 0.5rem 1rem;
   cursor: pointer;
 }

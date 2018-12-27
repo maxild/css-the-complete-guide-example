@@ -40,6 +40,41 @@
 
 // restyling form elements
 
+// Important pseudo classes (used to define special state of form controls)
+//
+// CSS 2.1
+//    :active,
+//    :hover
+//    :focus
+//
+// CSS Selector Level 3
+//    :enabled
+//    :disabled
+//    :checked      <-- radio and checkbox form controls
+//    :indeterminate
+//
+// CSS Basic UI Level 3
+//    :default
+//    :invalid <-- This will depend on the validation constraints imposed by the type or pattern attribute value.
+//    :valid
+//    :required
+//    :optional
+//    :in-range <-- range, number, and date input controls with min and/or max attribute values
+//    :out-of-range
+//    :read-only
+//    :read-write
+//
+// CSS Selector Level 4
+//    :user-error
+//
+// NOTE: form controls have many states at the same time => Bewarse of specificity in style definitions
+
+// Important HTML5 attributes
+//    disabled
+//    invalid
+//    required
+//    readonly
+
 .signup__form label {
   font-weight: bold;
 }
@@ -48,7 +83,7 @@
 .signup__form select {
   border: 1px solid $color-gray-lighter;
   padding: 0.2rem 0.5rem;
-  font: inherit; // could also define font-stack variable
+  //font: inherit; // This is done in _elements.base.scss
 
   &:focus {
     outline: none;
@@ -65,8 +100,12 @@
   // Autoprefixer will create these for us
   // -webkit-appearance: none;
   // -moz-appearance: none;
-  /* CSS Basic User Interface Module Level 4 values */
-  appearance: none;
+  // CSS Basic User Interface Module Level 4
+  // Unfortunately, styling radio controls and checkboxes in most browsers is difficult.
+  // **CSS Basic User Interface Module Level 4** attempts to address this with the
+  // appearance property, but this property is not yet supported. WebKit/Blink-based browsers
+  // and Firefox do, however, support nonstandard, vendor-prefixed versions of it.
+  appearance: none; // gain (almost full) control over the checkbox widget.
 
   &:focus {
     outline: none;

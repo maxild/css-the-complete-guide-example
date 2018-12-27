@@ -4,11 +4,11 @@
 
 .button {
   background-color: $color-bg-btn;
+  color: $color-btn;
   border: 1.5px solid $color-bg-btn;
   border-radius: $base-radius; // keep pixels here
-  color: $color-btn;
   cursor: pointer;
-  font: inherit; /* override font styles in user agent with our body styles */
+  //font: inherit; // This is done in _elements.base.scss
   font-weight: bold;
   padding: 0.5rem;
 }
@@ -21,6 +21,15 @@
 
 .button:focus {
   outline: none;
+}
+
+.button[disabled],
+.button:disabled {
+  //opacity: 0.5;
+  cursor: not-allowed;
+  border: $color-gray-light;
+  background: $color-gray-lighter;
+  color: $color-gray-light;
 }
 
 /* -------------------------------------------

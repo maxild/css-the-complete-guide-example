@@ -10,3 +10,13 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+// TODO: Investigate Normalize.css by Nicolas Gallagher
+// override font styles in user agent with our body font-family
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
